@@ -1,12 +1,12 @@
-FINISHED ('s3_dec_r1_eta0.4_F_seed2', 'skip')
-FINISHED ('s3_dec_r1_eta0.4_O_seed2', 'skip')
-FINISHED ('s3_hex_r1_eta0.4_F_seed2', 'skip')
+FINISHED ('s3_dec_r1_eta0.4_O_seed1', 'skip')
 FINISHED ('s3_hex_r1_eta0.4_F_seed1', 'skip')
+FINISHED ('s3_hex_r1_eta0.4_F_seed2', 'skip')
+FINISHED ('s3_dec_r1_eta0.4_O_seed2', 'skip')
 FINISHED ('s3_hex_r1_eta0.4_O_seed1', 'skip')
 FINISHED ('s3_hex_r1_eta0.4_O_seed2', 'skip')
-FINISHED ('s3_dec_r1_eta0.4_O_seed1', 'skip')
+FINISHED ('s3_oct_r1_eta0.4_F_seed1', 'skip')
 FINISHED ('s3_dec_r1_eta0.4_F_seed1', 'skip')
-[s3_oct_r1_eta0.4_F_seed1] resume at step 5500
-[s3_oct_r1_eta0.4_O_seed2] resume at step 4500
-[s3_oct_r1_eta0.4_F_seed2] resume at step 5000
-[s3_oct_r1_eta0.4_O_seed1] resume at step 5000
+FINISHED ('s3_oct_r1_eta0.4_O_seed1', 'skip')
+FINISHED ('s3_oct_r1_eta0.4_F_seed2', 'skip')
+FINISHED ('s3_dec_r1_eta0.4_F_seed2', 'skip')
+[s3_oct_r1_eta0.4_O_seed2] resume at step 5500
