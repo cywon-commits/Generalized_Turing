@@ -4,3 +4,7 @@
 /home/user/Generalized_Turing/ring_sim/model.py:71: RuntimeWarning: The iteration is not making good progress, as measured by the 
  improvement from the last ten iterations.
   sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
+[s5_dodec_r0_eta0.4_F_seed1] step 500/6000 t=500 Pin=1.276e-02 P0=1.686e-03 elapsed 129s
+[s5_dodec_r0_eta0.4_F_seed2] step 500/6000 t=500 Pin=1.035e-02 P0=3.650e-03 elapsed 131s
+[s5_dodec_r0_eta0.4_F_seed1] step 1000/6000 t=1000 Pin=1.283e-02 P0=1.626e-03 elapsed 262s
+[s5_dodec_r0_eta0.4_F_seed2] step 1000/6000 t=1000 Pin=1.132e-02 P0=2.876e-03 elapsed 265s
