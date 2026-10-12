@@ -23,7 +23,7 @@ def load_config(path):
 
 
 def build(cfg, workers=1):
-    base = Params()
+    base = Params(Dv=cfg.get("Dv", 2.55))
     ratio = cfg.get("ratio", RATIOS[cfg["case"]])
     r = cfg.get("r", 1.0)
     if "ku" in cfg and "kv" in cfg:
