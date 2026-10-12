@@ -1,28 +1,11 @@
 FINISHED ('s3_dec_r1_eta0.4_O_seed1', 'skip')
+FINISHED ('s3_dec_r1_eta0.4_F_seed1', 'skip')
+FINISHED ('s3_hex_r1_eta0.4_F_seed1', 'skip')
+FINISHED ('s3_hex_r1_eta0.4_F_seed2', 'skip')
+FINISHED ('s3_hex_r1_eta0.4_O_seed1', 'skip')
 FINISHED ('s3_dec_r1_eta0.4_O_seed2', 'skip')
 FINISHED ('s3_dec_r1_eta0.4_F_seed2', 'skip')
-FINISHED ('s3_dec_r1_eta0.4_F_seed1', 'skip')
-/home/user/Generalized_Turing/ring_sim/model.py:71: RuntimeWarning: The iteration is not making good progress, as measured by the 
- improvement from the last ten iterations.
-  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
-/home/user/Generalized_Turing/ring_sim/model.py:71: RuntimeWarning: The iteration is not making good progress, as measured by the 
- improvement from the last ten iterations.
-  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
-/home/user/Generalized_Turing/ring_sim/model.py:71: RuntimeWarning: The iteration is not making good progress, as measured by the 
- improvement from the last ten iterations.
-  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
-/home/user/Generalized_Turing/ring_sim/model.py:71: RuntimeWarning: The iteration is not making good progress, as measured by the 
- improvement from the last ten iterations.
-  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
-[s3_hex_r1_eta0.4_O_seed1] resume at step 4500
-[s3_hex_r1_eta0.4_F_seed1] resume at step 4000
-[s3_hex_r1_eta0.4_O_seed2] resume at step 4000
-[s3_hex_r1_eta0.4_F_seed2] resume at step 4500
-[s3_hex_r1_eta0.4_F_seed1] step 4500/6000 t=4500 Pin=2.082e-38 P0=2.021e-02 elapsed 118s
-[s3_hex_r1_eta0.4_F_seed2] step 5000/6000 t=5000 Pin=2.184e-38 P0=2.021e-02 elapsed 119s
-[s3_hex_r1_eta0.4_O_seed1] step 5000/6000 t=5000 Pin=2.785e-38 P0=2.021e-02 elapsed 119s
-[s3_hex_r1_eta0.4_O_seed2] step 4500/6000 t=4500 Pin=2.480e-38 P0=2.021e-02 elapsed 121s
-[s3_hex_r1_eta0.4_F_seed1] step 5000/6000 t=5000 Pin=2.629e-38 P0=2.021e-02 elapsed 245s
-[s3_hex_r1_eta0.4_F_seed2] step 5500/6000 t=5500 Pin=2.178e-38 P0=2.021e-02 elapsed 249s
-[s3_hex_r1_eta0.4_O_seed2] step 5000/6000 t=5000 Pin=4.486e-38 P0=2.021e-02 elapsed 250s
-[s3_hex_r1_eta0.4_O_seed1] step 5500/6000 t=5500 Pin=3.582e-38 P0=2.021e-02 elapsed 250s
+FINISHED ('s3_hex_r1_eta0.4_O_seed2', 'skip')
+[s3_oct_r1_eta0.4_O_seed1] resume at step 500
+[s3_oct_r1_eta0.4_F_seed1] resume at step 500
+[s3_oct_r1_eta0.4_F_seed2] resume at step 500
