@@ -9,3 +9,11 @@ FINISHED ('s3_hex_r1_eta0.4_O_seed2', 'skip')
 [s3_oct_r1_eta0.4_O_seed1] resume at step 500
 [s3_oct_r1_eta0.4_F_seed1] resume at step 500
 [s3_oct_r1_eta0.4_F_seed2] resume at step 500
+[s3_oct_r1_eta0.4_F_seed1] step 1000/6000 t=1000 Pin=2.740e-03 P0=1.386e-02 elapsed 117s
+[s3_oct_r1_eta0.4_O_seed1] step 1000/6000 t=1000 Pin=2.254e-06 P0=1.388e-02 elapsed 118s
+[s3_oct_r1_eta0.4_F_seed2] step 1000/6000 t=1000 Pin=2.209e-03 P0=1.028e-02 elapsed 120s
+[s3_oct_r1_eta0.4_O_seed2] step 500/6000 t=500 Pin=7.266e-19 P0=1.365e-02 elapsed 124s
+[s3_oct_r1_eta0.4_F_seed1] step 1500/6000 t=1500 Pin=2.591e-03 P0=1.429e-02 elapsed 240s
+[s3_oct_r1_eta0.4_O_seed1] step 1500/6000 t=1500 Pin=4.312e-07 P0=1.425e-02 elapsed 240s
+[s3_oct_r1_eta0.4_F_seed2] step 1500/6000 t=1500 Pin=2.071e-03 P0=1.039e-02 elapsed 243s
+[s3_oct_r1_eta0.4_O_seed2] step 1000/6000 t=1000 Pin=4.295e-30 P0=1.369e-02 elapsed 248s
