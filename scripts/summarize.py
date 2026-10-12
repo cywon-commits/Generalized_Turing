@@ -18,7 +18,7 @@ def fit_rate(t, y, frac=0.25, tmin=500.0):
 def classify(rec, nfold):
     P0, Pin, lam, axes = rec["P0"], rec["Pin"], rec["Lam_in"], rec["inner_axes"]
     rho = Pin / P0 if P0 > 0 else 0.0
-    if rho < 1e-3 and lam < 0:
+    if rho < 1e-3:  # 수치 바닥(≈1e-37) 또는 얼어붙은 저파수 잡음 잔여 — 안쪽 원 없음
         return "inner extinct"
     if rho > 1e-2 and lam > -0.3 * abs(2 * rec["sigma1"]):
         full = axes >= nfold // 2 - 1

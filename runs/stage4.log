@@ -1,7 +1,51 @@
 /home/user/Generalized_Turing/ring_sim/model.py:71: RuntimeWarning: The iteration is not making good progress, as measured by the 
  improvement from the last ten iterations.
   sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
-[s4_ctrlA_r1_eta0.4_N_seed2] resume at step 4000
-[s4_dodec_r1_eta0.4_N_seed1] resume at step 4000
-[s4_ctrlA_r1_eta0.4_N_seed1] resume at step 4000
-[s4_ctrlA_r1_eta0.4_N_seed3] resume at step 4000
+[s4_ctrlA_r1_eta0.4_N_seed2] resume at step 5000
+[s4_ctrlA_r1_eta0.4_N_seed3] resume at step 5000
+[s4_dodec_r1_eta0.4_N_seed1] resume at step 5000
+[s4_ctrlA_r1_eta0.4_N_seed1] resume at step 5000
+[s4_ctrlA_r1_eta0.4_N_seed2] step 5500/6000 t=5500 Pin=2.176e-37 P0=1.375e-02 elapsed 129s
+[s4_ctrlA_r1_eta0.4_N_seed3] step 5500/6000 t=5500 Pin=2.219e-37 P0=1.367e-02 elapsed 128s
+[s4_ctrlA_r1_eta0.4_N_seed1] step 5500/6000 t=5500 Pin=2.204e-37 P0=1.365e-02 elapsed 129s
+[s4_dodec_r1_eta0.4_N_seed1] step 5500/6000 t=5500 Pin=1.409e-37 P0=1.365e-02 elapsed 132s
+[s4_ctrlA_r1_eta0.4_N_seed3] step 6000/6000 t=6000 Pin=2.089e-37 P0=1.368e-02 elapsed 249s
+FINISHED ('s4_ctrlA_r1_eta0.4_N_seed3', 'done')
+/home/user/Generalized_Turing/ring_sim/model.py:71: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
+[s4_ctrlA_r1_eta0.4_N_seed2] step 6000/6000 t=6000 Pin=2.174e-37 P0=1.376e-02 elapsed 252s
+FINISHED ('s4_ctrlA_r1_eta0.4_N_seed2', 'done')
+/home/user/Generalized_Turing/ring_sim/model.py:71: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
+[s4_ctrlA_r1_eta0.4_N_seed1] step 6000/6000 t=6000 Pin=2.168e-37 P0=1.366e-02 elapsed 251s
+FINISHED ('s4_ctrlA_r1_eta0.4_N_seed1', 'done')
+[s4_dodec_r1_eta0.4_N_seed1] step 6000/6000 t=6000 Pin=1.410e-37 P0=1.366e-02 elapsed 255s
+FINISHED ('s4_dodec_r1_eta0.4_N_seed1', 'done')
+[s4_dodec_r1_eta0.4_N_seed2] step 500/6000 t=500 Pin=2.180e-12 P0=7.167e-07 elapsed 116s
+[s4_dodec_r1_eta0.4_N_seed3] step 500/6000 t=500 Pin=2.200e-12 P0=6.726e-07 elapsed 115s
+[s4_dodec_r1_eta0.4_N_seed2] step 1000/6000 t=1000 Pin=1.333e-12 P0=1.198e-02 elapsed 229s
+[s4_dodec_r1_eta0.4_N_seed3] step 1000/6000 t=1000 Pin=6.905e-13 P0=1.171e-02 elapsed 231s
+[s4_dodec_r1_eta0.4_N_seed2] step 1500/6000 t=1500 Pin=6.287e-23 P0=1.313e-02 elapsed 341s
+[s4_dodec_r1_eta0.4_N_seed3] step 1500/6000 t=1500 Pin=7.664e-22 P0=1.305e-02 elapsed 343s
+[s4_dodec_r1_eta0.4_N_seed2] step 2000/6000 t=2000 Pin=4.250e-34 P0=1.336e-02 elapsed 454s
+[s4_dodec_r1_eta0.4_N_seed3] step 2000/6000 t=2000 Pin=1.947e-32 P0=1.333e-02 elapsed 456s
+[s4_dodec_r1_eta0.4_N_seed2] step 2500/6000 t=2500 Pin=1.527e-37 P0=1.349e-02 elapsed 567s
+[s4_dodec_r1_eta0.4_N_seed3] step 2500/6000 t=2500 Pin=1.452e-37 P0=1.346e-02 elapsed 570s
+[s4_dodec_r1_eta0.4_N_seed2] step 3000/6000 t=3000 Pin=1.440e-37 P0=1.359e-02 elapsed 674s
+[s4_dodec_r1_eta0.4_N_seed3] step 3000/6000 t=3000 Pin=1.438e-37 P0=1.354e-02 elapsed 676s
+[s4_dodec_r1_eta0.4_N_seed2] step 3500/6000 t=3500 Pin=1.490e-37 P0=1.365e-02 elapsed 774s
+[s4_dodec_r1_eta0.4_N_seed3] step 3500/6000 t=3500 Pin=1.494e-37 P0=1.359e-02 elapsed 775s
+[s4_dodec_r1_eta0.4_N_seed2] step 4000/6000 t=4000 Pin=1.399e-37 P0=1.369e-02 elapsed 882s
+[s4_dodec_r1_eta0.4_N_seed3] step 4000/6000 t=4000 Pin=1.461e-37 P0=1.362e-02 elapsed 885s
+[s4_dodec_r1_eta0.4_N_seed2] step 4500/6000 t=4500 Pin=1.438e-37 P0=1.372e-02 elapsed 991s
+[s4_dodec_r1_eta0.4_N_seed3] step 4500/6000 t=4500 Pin=1.515e-37 P0=1.364e-02 elapsed 996s
+[s4_dodec_r1_eta0.4_N_seed2] step 5000/6000 t=5000 Pin=1.421e-37 P0=1.374e-02 elapsed 1092s
+[s4_dodec_r1_eta0.4_N_seed3] step 5000/6000 t=5000 Pin=1.412e-37 P0=1.365e-02 elapsed 1099s
+[s4_dodec_r1_eta0.4_N_seed2] step 5500/6000 t=5500 Pin=1.352e-37 P0=1.375e-02 elapsed 1199s
+[s4_dodec_r1_eta0.4_N_seed3] step 5500/6000 t=5500 Pin=1.478e-37 P0=1.367e-02 elapsed 1210s
+[s4_dodec_r1_eta0.4_N_seed2] step 6000/6000 t=6000 Pin=1.395e-37 P0=1.376e-02 elapsed 1310s
+FINISHED ('s4_dodec_r1_eta0.4_N_seed2', 'done')
+[s4_dodec_r1_eta0.4_N_seed3] step 6000/6000 t=6000 Pin=1.437e-37 P0=1.368e-02 elapsed 1319s
+FINISHED ('s4_dodec_r1_eta0.4_N_seed3', 'done')

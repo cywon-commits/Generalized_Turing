@@ -4,7 +4,27 @@
 /home/user/Generalized_Turing/ring_sim/model.py:71: RuntimeWarning: The iteration is not making good progress, as measured by the 
  improvement from the last ten iterations.
   sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
-[s5_dodec_r0_eta0.4_F_seed1] step 500/6000 t=500 Pin=1.276e-02 P0=1.686e-03 elapsed 129s
-[s5_dodec_r0_eta0.4_F_seed2] step 500/6000 t=500 Pin=1.035e-02 P0=3.650e-03 elapsed 131s
-[s5_dodec_r0_eta0.4_F_seed1] step 1000/6000 t=1000 Pin=1.283e-02 P0=1.626e-03 elapsed 262s
-[s5_dodec_r0_eta0.4_F_seed2] step 1000/6000 t=1000 Pin=1.132e-02 P0=2.876e-03 elapsed 265s
+[s5_dodec_r0_eta0.4_F_seed2] resume at step 1000
+[s5_dodec_r0_eta0.4_F_seed1] resume at step 1000
+[s5_dodec_r0_eta0.4_F_seed1] step 1500/6000 t=1500 Pin=1.281e-02 P0=1.645e-03 elapsed 102s
+[s5_dodec_r0_eta0.4_F_seed2] step 1500/6000 t=1500 Pin=1.164e-02 P0=2.742e-03 elapsed 103s
+[s5_dodec_r0_eta0.4_F_seed1] step 2000/6000 t=2000 Pin=1.277e-02 P0=1.660e-03 elapsed 206s
+[s5_dodec_r0_eta0.4_F_seed2] step 2000/6000 t=2000 Pin=1.180e-02 P0=2.704e-03 elapsed 207s
+[s5_dodec_r0_eta0.4_F_seed1] step 2500/6000 t=2500 Pin=1.274e-02 P0=1.675e-03 elapsed 318s
+[s5_dodec_r0_eta0.4_F_seed2] step 2500/6000 t=2500 Pin=1.187e-02 P0=2.671e-03 elapsed 318s
+[s5_dodec_r0_eta0.4_F_seed2] step 3000/6000 t=3000 Pin=1.191e-02 P0=2.666e-03 elapsed 424s
+[s5_dodec_r0_eta0.4_F_seed1] step 3000/6000 t=3000 Pin=1.272e-02 P0=1.685e-03 elapsed 427s
+[s5_dodec_r0_eta0.4_F_seed2] step 3500/6000 t=3500 Pin=1.196e-02 P0=2.653e-03 elapsed 524s
+[s5_dodec_r0_eta0.4_F_seed1] step 3500/6000 t=3500 Pin=1.270e-02 P0=1.691e-03 elapsed 534s
+[s5_dodec_r0_eta0.4_F_seed2] step 4000/6000 t=4000 Pin=1.200e-02 P0=2.646e-03 elapsed 633s
+[s5_dodec_r0_eta0.4_F_seed1] step 4000/6000 t=4000 Pin=1.269e-02 P0=1.693e-03 elapsed 639s
+[s5_dodec_r0_eta0.4_F_seed2] step 4500/6000 t=4500 Pin=1.204e-02 P0=2.638e-03 elapsed 744s
+[s5_dodec_r0_eta0.4_F_seed1] step 4500/6000 t=4500 Pin=1.268e-02 P0=1.698e-03 elapsed 748s
+[s5_dodec_r0_eta0.4_F_seed1] step 5000/6000 t=5000 Pin=1.269e-02 P0=1.703e-03 elapsed 853s
+[s5_dodec_r0_eta0.4_F_seed2] step 5000/6000 t=5000 Pin=1.207e-02 P0=2.625e-03 elapsed 854s
+[s5_dodec_r0_eta0.4_F_seed1] step 5500/6000 t=5500 Pin=1.269e-02 P0=1.705e-03 elapsed 954s
+[s5_dodec_r0_eta0.4_F_seed2] step 5500/6000 t=5500 Pin=1.209e-02 P0=2.619e-03 elapsed 958s
+[s5_dodec_r0_eta0.4_F_seed1] step 6000/6000 t=6000 Pin=1.269e-02 P0=1.706e-03 elapsed 1059s
+FINISHED ('s5_dodec_r0_eta0.4_F_seed1', 'done')
+[s5_dodec_r0_eta0.4_F_seed2] step 6000/6000 t=6000 Pin=1.210e-02 P0=2.615e-03 elapsed 1066s
+FINISHED ('s5_dodec_r0_eta0.4_F_seed2', 'done')
