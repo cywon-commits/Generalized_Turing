@@ -1,0 +1,246 @@
+[s1_ctrlA_r1_eta0.4_F_seed2] step 500/6000 t=500 Pin=9.455e-04 P0=1.369e-02 elapsed 105s
+[s1_ctrlA_r1_eta0.4_F_seed3] step 500/6000 t=500 Pin=3.195e-04 P0=1.387e-02 elapsed 106s
+[s1_ctrlA_r1_eta0.4_O_seed1] step 500/6000 t=500 Pin=2.956e-20 P0=2.021e-02 elapsed 106s
+[s1_ctrlA_r1_eta0.4_F_seed1] step 500/6000 t=500 Pin=3.182e-03 P0=1.000e-02 elapsed 106s
+[s1_ctrlA_r1_eta0.4_F_seed2] step 1000/6000 t=1000 Pin=6.896e-04 P0=1.422e-02 elapsed 204s
+[s1_ctrlA_r1_eta0.4_O_seed1] step 1000/6000 t=1000 Pin=1.843e-37 P0=2.021e-02 elapsed 208s
+[s1_ctrlA_r1_eta0.4_F_seed3] step 1000/6000 t=1000 Pin=1.374e-04 P0=1.454e-02 elapsed 209s
+[s1_ctrlA_r1_eta0.4_F_seed1] step 1000/6000 t=1000 Pin=2.302e-03 P0=1.181e-02 elapsed 210s
+[s1_ctrlA_r1_eta0.4_F_seed2] step 1500/6000 t=1500 Pin=4.802e-04 P0=1.466e-02 elapsed 302s
+[s1_ctrlA_r1_eta0.4_O_seed1] step 1500/6000 t=1500 Pin=3.706e-38 P0=2.021e-02 elapsed 307s
+[s1_ctrlA_r1_eta0.4_F_seed3] step 1500/6000 t=1500 Pin=1.086e-04 P0=1.466e-02 elapsed 308s
+[s1_ctrlA_r1_eta0.4_F_seed1] step 1500/6000 t=1500 Pin=1.844e-03 P0=1.300e-02 elapsed 311s
+[s1_ctrlA_r1_eta0.4_F_seed2] step 2000/6000 t=2000 Pin=3.832e-04 P0=1.488e-02 elapsed 409s
+[s1_ctrlA_r1_eta0.4_F_seed3] step 2000/6000 t=2000 Pin=1.016e-04 P0=1.469e-02 elapsed 414s
+[s1_ctrlA_r1_eta0.4_F_seed1] step 2000/6000 t=2000 Pin=1.569e-03 P0=1.381e-02 elapsed 415s
+[s1_ctrlA_r1_eta0.4_O_seed1] step 2000/6000 t=2000 Pin=3.025e-38 P0=2.021e-02 elapsed 416s
+[s1_ctrlA_r1_eta0.4_F_seed2] step 2500/6000 t=2500 Pin=3.455e-04 P0=1.498e-02 elapsed 510s
+[s1_ctrlA_r1_eta0.4_F_seed3] step 2500/6000 t=2500 Pin=1.003e-04 P0=1.469e-02 elapsed 516s
+[s1_ctrlA_r1_eta0.4_F_seed1] step 2500/6000 t=2500 Pin=1.389e-03 P0=1.434e-02 elapsed 519s
+[s1_ctrlA_r1_eta0.4_O_seed1] step 2500/6000 t=2500 Pin=3.042e-38 P0=2.021e-02 elapsed 519s
+[s1_ctrlA_r1_eta0.4_F_seed2] step 3000/6000 t=3000 Pin=3.249e-04 P0=1.503e-02 elapsed 608s
+[s1_ctrlA_r1_eta0.4_O_seed1] step 3000/6000 t=3000 Pin=4.149e-38 P0=2.021e-02 elapsed 617s
+[s1_ctrlA_r1_eta0.4_F_seed3] step 3000/6000 t=3000 Pin=9.915e-05 P0=1.470e-02 elapsed 618s
+[s1_ctrlA_r1_eta0.4_F_seed1] step 3000/6000 t=3000 Pin=1.280e-03 P0=1.472e-02 elapsed 619s
+[s1_ctrlA_r1_eta0.4_F_seed2] step 3500/6000 t=3500 Pin=3.135e-04 P0=1.509e-02 elapsed 703s
+[s1_ctrlA_r1_eta0.4_O_seed1] step 3500/6000 t=3500 Pin=2.259e-38 P0=2.021e-02 elapsed 713s
+[s1_ctrlA_r1_eta0.4_F_seed3] step 3500/6000 t=3500 Pin=9.545e-05 P0=1.471e-02 elapsed 715s
+[s1_ctrlA_r1_eta0.4_F_seed1] step 3500/6000 t=3500 Pin=1.208e-03 P0=1.497e-02 elapsed 718s
+[s1_ctrlA_r1_eta0.4_F_seed2] step 4000/6000 t=4000 Pin=3.083e-04 P0=1.509e-02 elapsed 801s
+[s1_ctrlA_r1_eta0.4_O_seed1] step 4000/6000 t=4000 Pin=2.627e-38 P0=2.021e-02 elapsed 814s
+[s1_ctrlA_r1_eta0.4_F_seed3] step 4000/6000 t=4000 Pin=9.539e-05 P0=1.471e-02 elapsed 816s
+[s1_ctrlA_r1_eta0.4_F_seed1] step 4000/6000 t=4000 Pin=1.158e-03 P0=1.514e-02 elapsed 819s
+[s1_ctrlA_r1_eta0.4_F_seed2] step 4500/6000 t=4500 Pin=3.053e-04 P0=1.509e-02 elapsed 898s
+[s1_ctrlA_r1_eta0.4_O_seed1] step 4500/6000 t=4500 Pin=2.620e-38 P0=2.021e-02 elapsed 909s
+[s1_ctrlA_r1_eta0.4_F_seed3] step 4500/6000 t=4500 Pin=9.538e-05 P0=1.471e-02 elapsed 914s
+[s1_ctrlA_r1_eta0.4_F_seed1] step 4500/6000 t=4500 Pin=1.123e-03 P0=1.525e-02 elapsed 916s
+[s1_ctrlA_r1_eta0.4_F_seed2] step 5000/6000 t=5000 Pin=3.030e-04 P0=1.510e-02 elapsed 993s
+[s1_ctrlA_r1_eta0.4_O_seed1] step 5000/6000 t=5000 Pin=2.617e-38 P0=2.021e-02 elapsed 1008s
+[s1_ctrlA_r1_eta0.4_F_seed1] step 5000/6000 t=5000 Pin=1.091e-03 P0=1.536e-02 elapsed 1013s
+[s1_ctrlA_r1_eta0.4_F_seed3] step 5000/6000 t=5000 Pin=9.538e-05 P0=1.471e-02 elapsed 1014s
+[s1_ctrlA_r1_eta0.4_F_seed2] step 5500/6000 t=5500 Pin=2.995e-04 P0=1.510e-02 elapsed 1093s
+[s1_ctrlA_r1_eta0.4_O_seed1] step 5500/6000 t=5500 Pin=2.757e-38 P0=2.021e-02 elapsed 1106s
+[s1_ctrlA_r1_eta0.4_F_seed1] step 5500/6000 t=5500 Pin=1.074e-03 P0=1.542e-02 elapsed 1112s
+[s1_ctrlA_r1_eta0.4_F_seed3] step 5500/6000 t=5500 Pin=9.537e-05 P0=1.471e-02 elapsed 1118s
+[s1_ctrlA_r1_eta0.4_F_seed2] step 6000/6000 t=6000 Pin=2.981e-04 P0=1.511e-02 elapsed 1198s
+FINISHED ('s1_ctrlA_r1_eta0.4_F_seed2', 'done')
+[s1_ctrlA_r1_eta0.4_O_seed1] step 6000/6000 t=6000 Pin=2.445e-38 P0=2.021e-02 elapsed 1211s
+FINISHED ('s1_ctrlA_r1_eta0.4_O_seed1', 'done')
+[s1_ctrlA_r1_eta0.4_F_seed1] step 6000/6000 t=6000 Pin=1.057e-03 P0=1.549e-02 elapsed 1215s
+FINISHED ('s1_ctrlA_r1_eta0.4_F_seed1', 'done')
+/home/user/Generalized_Turing/ring_sim/model.py:71: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
+[s1_ctrlA_r1_eta0.4_F_seed3] step 6000/6000 t=6000 Pin=9.537e-05 P0=1.471e-02 elapsed 1221s
+FINISHED ('s1_ctrlA_r1_eta0.4_F_seed3', 'done')
+/home/user/Generalized_Turing/ring_sim/model.py:71: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
+[s1_ctrlA_r1_eta0.4_O_seed2] step 500/6000 t=500 Pin=2.994e-06 P0=1.586e-02 elapsed 102s
+[s1_ctrlA_r1_eta0.4_O_seed3] step 500/6000 t=500 Pin=2.892e-22 P0=1.515e-02 elapsed 102s
+[s1_ctrlB_r1_eta0.4_F_seed1] step 500/6000 t=500 Pin=4.586e-03 P0=8.274e-03 elapsed 99s
+[s1_ctrlB_r1_eta0.4_F_seed2] step 500/6000 t=500 Pin=1.383e-03 P0=1.308e-02 elapsed 100s
+[s1_ctrlA_r1_eta0.4_O_seed2] step 1000/6000 t=1000 Pin=3.370e-06 P0=1.722e-02 elapsed 204s
+[s1_ctrlB_r1_eta0.4_F_seed1] step 1000/6000 t=1000 Pin=4.126e-03 P0=8.800e-03 elapsed 196s
+[s1_ctrlA_r1_eta0.4_O_seed3] step 1000/6000 t=1000 Pin=4.034e-38 P0=1.515e-02 elapsed 201s
+[s1_ctrlB_r1_eta0.4_F_seed2] step 1000/6000 t=1000 Pin=1.183e-03 P0=1.335e-02 elapsed 199s
+[s1_ctrlA_r1_eta0.4_O_seed2] step 1500/6000 t=1500 Pin=3.353e-06 P0=1.764e-02 elapsed 303s
+[s1_ctrlB_r1_eta0.4_F_seed1] step 1500/6000 t=1500 Pin=3.899e-03 P0=9.101e-03 elapsed 294s
+[s1_ctrlA_r1_eta0.4_O_seed3] step 1500/6000 t=1500 Pin=5.072e-38 P0=1.515e-02 elapsed 304s
+[s1_ctrlB_r1_eta0.4_F_seed2] step 1500/6000 t=1500 Pin=1.023e-03 P0=1.357e-02 elapsed 301s
+[s1_ctrlA_r1_eta0.4_O_seed2] step 2000/6000 t=2000 Pin=3.339e-06 P0=1.890e-02 elapsed 404s
+[s1_ctrlB_r1_eta0.4_F_seed1] step 2000/6000 t=2000 Pin=3.773e-03 P0=9.274e-03 elapsed 395s
+[s1_ctrlA_r1_eta0.4_O_seed3] step 2000/6000 t=2000 Pin=3.788e-38 P0=1.515e-02 elapsed 407s
+[s1_ctrlB_r1_eta0.4_F_seed2] step 2000/6000 t=2000 Pin=8.923e-04 P0=1.378e-02 elapsed 398s
+[s1_ctrlA_r1_eta0.4_O_seed2] step 2500/6000 t=2500 Pin=3.341e-06 P0=1.924e-02 elapsed 510s
+[s1_ctrlB_r1_eta0.4_F_seed1] step 2500/6000 t=2500 Pin=3.654e-03 P0=9.445e-03 elapsed 503s
+[s1_ctrlA_r1_eta0.4_O_seed3] step 2500/6000 t=2500 Pin=4.035e-38 P0=1.515e-02 elapsed 512s
+[s1_ctrlB_r1_eta0.4_F_seed2] step 2500/6000 t=2500 Pin=8.009e-04 P0=1.395e-02 elapsed 507s
+[s1_ctrlA_r1_eta0.4_O_seed2] step 3000/6000 t=3000 Pin=3.341e-06 P0=1.935e-02 elapsed 606s
+[s1_ctrlB_r1_eta0.4_F_seed1] step 3000/6000 t=3000 Pin=3.598e-03 P0=9.525e-03 elapsed 599s
+[s1_ctrlA_r1_eta0.4_O_seed3] step 3000/6000 t=3000 Pin=3.160e-38 P0=1.515e-02 elapsed 611s
+[s1_ctrlB_r1_eta0.4_F_seed2] step 3000/6000 t=3000 Pin=7.475e-04 P0=1.405e-02 elapsed 606s
+[s1_ctrlA_r1_eta0.4_O_seed2] step 3500/6000 t=3500 Pin=3.344e-06 P0=1.943e-02 elapsed 701s
+[s1_ctrlB_r1_eta0.4_F_seed1] step 3500/6000 t=3500 Pin=3.576e-03 P0=9.556e-03 elapsed 693s
+[s1_ctrlA_r1_eta0.4_O_seed3] step 3500/6000 t=3500 Pin=3.741e-38 P0=1.515e-02 elapsed 708s
+[s1_ctrlB_r1_eta0.4_F_seed2] step 3500/6000 t=3500 Pin=7.227e-04 P0=1.411e-02 elapsed 702s
+[s1_ctrlA_r1_eta0.4_O_seed2] step 4000/6000 t=4000 Pin=3.347e-06 P0=1.948e-02 elapsed 797s
+[s1_ctrlB_r1_eta0.4_F_seed1] step 4000/6000 t=4000 Pin=3.555e-03 P0=9.587e-03 elapsed 788s
+[s1_ctrlA_r1_eta0.4_O_seed3] step 4000/6000 t=4000 Pin=3.493e-38 P0=1.515e-02 elapsed 805s
+[s1_ctrlB_r1_eta0.4_F_seed2] step 4000/6000 t=4000 Pin=7.082e-04 P0=1.413e-02 elapsed 800s
+[s1_ctrlA_r1_eta0.4_O_seed2] step 4500/6000 t=4500 Pin=3.349e-06 P0=1.962e-02 elapsed 888s
+[s1_ctrlB_r1_eta0.4_F_seed1] step 4500/6000 t=4500 Pin=3.530e-03 P0=9.628e-03 elapsed 878s
+[s1_ctrlA_r1_eta0.4_O_seed3] step 4500/6000 t=4500 Pin=2.746e-38 P0=1.515e-02 elapsed 897s
+[s1_ctrlB_r1_eta0.4_F_seed2] step 4500/6000 t=4500 Pin=7.000e-04 P0=1.415e-02 elapsed 891s
+[s1_ctrlA_r1_eta0.4_O_seed2] step 5000/6000 t=5000 Pin=3.348e-06 P0=1.989e-02 elapsed 979s
+[s1_ctrlB_r1_eta0.4_F_seed1] step 5000/6000 t=5000 Pin=3.516e-03 P0=9.647e-03 elapsed 967s
+[s1_ctrlA_r1_eta0.4_O_seed3] step 5000/6000 t=5000 Pin=3.900e-38 P0=1.515e-02 elapsed 991s
+[s1_ctrlB_r1_eta0.4_F_seed2] step 5000/6000 t=5000 Pin=6.935e-04 P0=1.415e-02 elapsed 982s
+[s1_ctrlA_r1_eta0.4_O_seed2] step 5500/6000 t=5500 Pin=3.346e-06 P0=1.995e-02 elapsed 1083s
+[s1_ctrlB_r1_eta0.4_F_seed1] step 5500/6000 t=5500 Pin=3.495e-03 P0=9.690e-03 elapsed 1070s
+[s1_ctrlA_r1_eta0.4_O_seed3] step 5500/6000 t=5500 Pin=3.850e-38 P0=1.515e-02 elapsed 1095s
+[s1_ctrlB_r1_eta0.4_F_seed2] step 5500/6000 t=5500 Pin=6.915e-04 P0=1.416e-02 elapsed 1087s
+[s1_ctrlA_r1_eta0.4_O_seed2] step 6000/6000 t=6000 Pin=3.345e-06 P0=1.995e-02 elapsed 1181s
+FINISHED ('s1_ctrlA_r1_eta0.4_O_seed2', 'done')
+/home/user/Generalized_Turing/ring_sim/model.py:71: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
+[s1_ctrlB_r1_eta0.4_F_seed1] step 6000/6000 t=6000 Pin=3.479e-03 P0=9.713e-03 elapsed 1166s
+FINISHED ('s1_ctrlB_r1_eta0.4_F_seed1', 'done')
+[s1_ctrlA_r1_eta0.4_O_seed3] step 6000/6000 t=6000 Pin=4.966e-38 P0=1.515e-02 elapsed 1193s
+FINISHED ('s1_ctrlA_r1_eta0.4_O_seed3', 'done')
+/home/user/Generalized_Turing/ring_sim/model.py:71: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
+[s1_ctrlB_r1_eta0.4_F_seed2] step 6000/6000 t=6000 Pin=6.894e-04 P0=1.417e-02 elapsed 1185s
+FINISHED ('s1_ctrlB_r1_eta0.4_F_seed2', 'done')
+[s1_ctrlB_r1_eta0.4_F_seed3] step 500/6000 t=500 Pin=8.049e-04 P0=1.260e-02 elapsed 97s
+[s1_ctrlB_r1_eta0.4_O_seed1] step 500/6000 t=500 Pin=4.178e-22 P0=2.021e-02 elapsed 97s
+[s1_ctrlB_r1_eta0.4_O_seed2] step 500/6000 t=500 Pin=1.057e-06 P0=1.584e-02 elapsed 97s
+[s1_ctrlB_r1_eta0.4_O_seed3] step 500/6000 t=500 Pin=9.304e-24 P0=1.515e-02 elapsed 98s
+[s1_ctrlB_r1_eta0.4_F_seed3] step 1000/6000 t=1000 Pin=5.834e-04 P0=1.313e-02 elapsed 190s
+[s1_ctrlB_r1_eta0.4_O_seed1] step 1000/6000 t=1000 Pin=2.408e-38 P0=2.021e-02 elapsed 190s
+[s1_ctrlB_r1_eta0.4_O_seed2] step 1000/6000 t=1000 Pin=1.260e-06 P0=1.721e-02 elapsed 191s
+[s1_ctrlB_r1_eta0.4_O_seed3] step 1000/6000 t=1000 Pin=3.196e-38 P0=1.515e-02 elapsed 193s
+[s1_ctrlB_r1_eta0.4_O_seed1] step 1500/6000 t=1500 Pin=2.753e-38 P0=2.021e-02 elapsed 283s
+[s1_ctrlB_r1_eta0.4_F_seed3] step 1500/6000 t=1500 Pin=5.461e-04 P0=1.324e-02 elapsed 285s
+[s1_ctrlB_r1_eta0.4_O_seed2] step 1500/6000 t=1500 Pin=1.254e-06 P0=1.764e-02 elapsed 285s
+[s1_ctrlB_r1_eta0.4_O_seed3] step 1500/6000 t=1500 Pin=3.314e-38 P0=1.515e-02 elapsed 290s
+[s1_ctrlB_r1_eta0.4_F_seed3] step 2000/6000 t=2000 Pin=5.288e-04 P0=1.329e-02 elapsed 381s
+[s1_ctrlB_r1_eta0.4_O_seed1] step 2000/6000 t=2000 Pin=2.075e-38 P0=2.021e-02 elapsed 382s
+[s1_ctrlB_r1_eta0.4_O_seed2] step 2000/6000 t=2000 Pin=1.251e-06 P0=1.893e-02 elapsed 386s
+[s1_ctrlB_r1_eta0.4_O_seed3] step 2000/6000 t=2000 Pin=3.030e-38 P0=1.515e-02 elapsed 391s
+[s1_ctrlB_r1_eta0.4_F_seed3] step 2500/6000 t=2500 Pin=5.183e-04 P0=1.332e-02 elapsed 480s
+[s1_ctrlB_r1_eta0.4_O_seed1] step 2500/6000 t=2500 Pin=1.786e-38 P0=2.021e-02 elapsed 483s
+[s1_ctrlB_r1_eta0.4_O_seed2] step 2500/6000 t=2500 Pin=1.254e-06 P0=1.923e-02 elapsed 484s
+[s1_ctrlB_r1_eta0.4_O_seed3] step 2500/6000 t=2500 Pin=3.679e-38 P0=1.515e-02 elapsed 488s
+[s1_ctrlB_r1_eta0.4_F_seed3] step 3000/6000 t=3000 Pin=5.094e-04 P0=1.334e-02 elapsed 573s
+[s1_ctrlB_r1_eta0.4_O_seed1] step 3000/6000 t=3000 Pin=1.917e-38 P0=2.021e-02 elapsed 575s
+[s1_ctrlB_r1_eta0.4_O_seed2] step 3000/6000 t=3000 Pin=1.254e-06 P0=1.941e-02 elapsed 578s
+[s1_ctrlB_r1_eta0.4_O_seed3] step 3000/6000 t=3000 Pin=3.042e-38 P0=1.515e-02 elapsed 585s
+[s1_ctrlB_r1_eta0.4_F_seed3] step 3500/6000 t=3500 Pin=5.057e-04 P0=1.335e-02 elapsed 664s
+[s1_ctrlB_r1_eta0.4_O_seed1] step 3500/6000 t=3500 Pin=2.339e-38 P0=2.021e-02 elapsed 668s
+[s1_ctrlB_r1_eta0.4_O_seed2] step 3500/6000 t=3500 Pin=1.256e-06 P0=1.947e-02 elapsed 675s
+[s1_ctrlB_r1_eta0.4_O_seed3] step 3500/6000 t=3500 Pin=3.275e-38 P0=1.515e-02 elapsed 686s
+[s1_ctrlB_r1_eta0.4_F_seed3] step 4000/6000 t=4000 Pin=5.049e-04 P0=1.335e-02 elapsed 772s
+[s1_ctrlB_r1_eta0.4_O_seed1] step 4000/6000 t=4000 Pin=2.061e-38 P0=2.021e-02 elapsed 778s
+[s1_ctrlB_r1_eta0.4_O_seed2] step 4000/6000 t=4000 Pin=1.258e-06 P0=1.951e-02 elapsed 785s
+[s1_ctrlB_r1_eta0.4_O_seed3] step 4000/6000 t=4000 Pin=3.274e-38 P0=1.515e-02 elapsed 796s
+[s1_ctrlB_r1_eta0.4_F_seed3] step 4500/6000 t=4500 Pin=5.031e-04 P0=1.335e-02 elapsed 875s
+[s1_ctrlB_r1_eta0.4_O_seed1] step 4500/6000 t=4500 Pin=2.206e-38 P0=2.021e-02 elapsed 882s
+[s1_ctrlB_r1_eta0.4_O_seed2] step 4500/6000 t=4500 Pin=1.259e-06 P0=1.965e-02 elapsed 884s
+[s1_ctrlB_r1_eta0.4_O_seed3] step 4500/6000 t=4500 Pin=3.166e-38 P0=1.515e-02 elapsed 900s
+[s1_ctrlB_r1_eta0.4_F_seed3] step 5000/6000 t=5000 Pin=5.021e-04 P0=1.335e-02 elapsed 985s
+[s1_ctrlB_r1_eta0.4_O_seed1] step 5000/6000 t=5000 Pin=2.703e-38 P0=2.021e-02 elapsed 993s
+[s1_ctrlB_r1_eta0.4_O_seed2] step 5000/6000 t=5000 Pin=1.260e-06 P0=1.994e-02 elapsed 991s
+[s1_ctrlB_r1_eta0.4_O_seed3] step 5000/6000 t=5000 Pin=4.746e-38 P0=1.515e-02 elapsed 1003s
+[s1_ctrlB_r1_eta0.4_F_seed3] step 5500/6000 t=5500 Pin=5.022e-04 P0=1.335e-02 elapsed 1082s
+[s1_ctrlB_r1_eta0.4_O_seed1] step 5500/6000 t=5500 Pin=2.664e-38 P0=2.021e-02 elapsed 1090s
+[s1_ctrlB_r1_eta0.4_O_seed2] step 5500/6000 t=5500 Pin=1.259e-06 P0=1.998e-02 elapsed 1091s
+[s1_ctrlB_r1_eta0.4_O_seed3] step 5500/6000 t=5500 Pin=3.905e-38 P0=1.515e-02 elapsed 1102s
+[s1_ctrlB_r1_eta0.4_F_seed3] step 6000/6000 t=6000 Pin=5.022e-04 P0=1.335e-02 elapsed 1179s
+FINISHED ('s1_ctrlB_r1_eta0.4_F_seed3', 'done')
+[s1_ctrlB_r1_eta0.4_O_seed1] step 6000/6000 t=6000 Pin=1.999e-38 P0=2.021e-02 elapsed 1191s
+FINISHED ('s1_ctrlB_r1_eta0.4_O_seed1', 'done')
+[s1_ctrlB_r1_eta0.4_O_seed2] step 6000/6000 t=6000 Pin=1.259e-06 P0=1.998e-02 elapsed 1187s
+FINISHED ('s1_ctrlB_r1_eta0.4_O_seed2', 'done')
+[s1_ctrlB_r1_eta0.4_O_seed3] step 6000/6000 t=6000 Pin=4.645e-38 P0=1.515e-02 elapsed 1199s
+FINISHED ('s1_ctrlB_r1_eta0.4_O_seed3', 'done')
+[s1_dodec_r1_eta0.4_F_seed1] step 500/6000 t=500 Pin=7.174e-03 P0=4.903e-03 elapsed 99s
+[s1_dodec_r1_eta0.4_F_seed2] step 500/6000 t=500 Pin=1.756e-03 P0=1.245e-02 elapsed 100s
+[s1_dodec_r1_eta0.4_F_seed3] step 500/6000 t=500 Pin=1.052e-03 P0=1.201e-02 elapsed 102s
+[s1_dodec_r1_eta0.4_O_seed1] step 500/6000 t=500 Pin=8.422e-23 P0=2.021e-02 elapsed 101s
+[s1_dodec_r1_eta0.4_F_seed1] step 1000/6000 t=1000 Pin=6.821e-03 P0=5.180e-03 elapsed 204s
+[s1_dodec_r1_eta0.4_F_seed2] step 1000/6000 t=1000 Pin=1.345e-03 P0=1.276e-02 elapsed 203s
+[s1_dodec_r1_eta0.4_F_seed3] step 1000/6000 t=1000 Pin=9.100e-04 P0=1.238e-02 elapsed 201s
+[s1_dodec_r1_eta0.4_O_seed1] step 1000/6000 t=1000 Pin=2.035e-38 P0=2.021e-02 elapsed 199s
+[s1_dodec_r1_eta0.4_F_seed1] step 1500/6000 t=1500 Pin=6.676e-03 P0=5.275e-03 elapsed 300s
+[s1_dodec_r1_eta0.4_F_seed2] step 1500/6000 t=1500 Pin=1.008e-03 P0=1.281e-02 elapsed 300s
+[s1_dodec_r1_eta0.4_F_seed3] step 1500/6000 t=1500 Pin=8.942e-04 P0=1.242e-02 elapsed 298s
+[s1_dodec_r1_eta0.4_O_seed1] step 1500/6000 t=1500 Pin=2.045e-38 P0=2.021e-02 elapsed 297s
+[s1_dodec_r1_eta0.4_F_seed1] step 2000/6000 t=2000 Pin=6.605e-03 P0=5.313e-03 elapsed 400s
+[s1_dodec_r1_eta0.4_F_seed2] step 2000/6000 t=2000 Pin=8.952e-04 P0=1.280e-02 elapsed 399s
+[s1_dodec_r1_eta0.4_F_seed3] step 2000/6000 t=2000 Pin=8.825e-04 P0=1.249e-02 elapsed 395s
+[s1_dodec_r1_eta0.4_O_seed1] step 2000/6000 t=2000 Pin=2.324e-38 P0=2.021e-02 elapsed 395s
+[s1_dodec_r1_eta0.4_F_seed1] step 2500/6000 t=2500 Pin=6.547e-03 P0=5.355e-03 elapsed 494s
+[s1_dodec_r1_eta0.4_F_seed2] step 2500/6000 t=2500 Pin=8.466e-04 P0=1.284e-02 elapsed 492s
+[s1_dodec_r1_eta0.4_F_seed3] step 2500/6000 t=2500 Pin=8.681e-04 P0=1.252e-02 elapsed 489s
+[s1_dodec_r1_eta0.4_O_seed1] step 2500/6000 t=2500 Pin=1.921e-38 P0=2.021e-02 elapsed 489s
+[s1_dodec_r1_eta0.4_F_seed1] step 3000/6000 t=3000 Pin=6.524e-03 P0=5.362e-03 elapsed 591s
+[s1_dodec_r1_eta0.4_F_seed2] step 3000/6000 t=3000 Pin=8.249e-04 P0=1.286e-02 elapsed 590s
+[s1_dodec_r1_eta0.4_F_seed3] step 3000/6000 t=3000 Pin=8.527e-04 P0=1.255e-02 elapsed 587s
+[s1_dodec_r1_eta0.4_O_seed1] step 3000/6000 t=3000 Pin=2.733e-38 P0=2.021e-02 elapsed 587s
+[s1_dodec_r1_eta0.4_F_seed1] step 3500/6000 t=3500 Pin=6.512e-03 P0=5.362e-03 elapsed 690s
+[s1_dodec_r1_eta0.4_F_seed2] step 3500/6000 t=3500 Pin=8.011e-04 P0=1.289e-02 elapsed 691s
+[s1_dodec_r1_eta0.4_F_seed3] step 3500/6000 t=3500 Pin=8.507e-04 P0=1.255e-02 elapsed 687s
+[s1_dodec_r1_eta0.4_O_seed1] step 3500/6000 t=3500 Pin=2.859e-38 P0=2.021e-02 elapsed 691s
+[s1_dodec_r1_eta0.4_F_seed1] step 4000/6000 t=4000 Pin=6.502e-03 P0=5.363e-03 elapsed 792s
+[s1_dodec_r1_eta0.4_F_seed2] step 4000/6000 t=4000 Pin=7.899e-04 P0=1.291e-02 elapsed 796s
+[s1_dodec_r1_eta0.4_F_seed3] step 4000/6000 t=4000 Pin=8.499e-04 P0=1.255e-02 elapsed 792s
+[s1_dodec_r1_eta0.4_O_seed1] step 4000/6000 t=4000 Pin=2.639e-38 P0=2.021e-02 elapsed 790s
+[s1_dodec_r1_eta0.4_F_seed1] step 4500/6000 t=4500 Pin=6.485e-03 P0=5.372e-03 elapsed 891s
+[s1_dodec_r1_eta0.4_F_seed2] step 4500/6000 t=4500 Pin=7.865e-04 P0=1.291e-02 elapsed 899s
+[s1_dodec_r1_eta0.4_F_seed3] step 4500/6000 t=4500 Pin=8.473e-04 P0=1.256e-02 elapsed 893s
+[s1_dodec_r1_eta0.4_O_seed1] step 4500/6000 t=4500 Pin=2.297e-38 P0=2.021e-02 elapsed 890s
+[s1_dodec_r1_eta0.4_F_seed1] step 5000/6000 t=5000 Pin=6.471e-03 P0=5.380e-03 elapsed 991s
+[s1_dodec_r1_eta0.4_F_seed2] step 5000/6000 t=5000 Pin=7.817e-04 P0=1.291e-02 elapsed 1003s
+[s1_dodec_r1_eta0.4_F_seed3] step 5000/6000 t=5000 Pin=8.447e-04 P0=1.257e-02 elapsed 992s
+[s1_dodec_r1_eta0.4_O_seed1] step 5000/6000 t=5000 Pin=2.942e-38 P0=2.021e-02 elapsed 991s
+[s1_dodec_r1_eta0.4_F_seed1] step 5500/6000 t=5500 Pin=6.467e-03 P0=5.382e-03 elapsed 1090s
+[s1_dodec_r1_eta0.4_F_seed2] step 5500/6000 t=5500 Pin=7.767e-04 P0=1.292e-02 elapsed 1104s
+[s1_dodec_r1_eta0.4_F_seed3] step 5500/6000 t=5500 Pin=8.415e-04 P0=1.258e-02 elapsed 1092s
+[s1_dodec_r1_eta0.4_O_seed1] step 5500/6000 t=5500 Pin=2.467e-38 P0=2.021e-02 elapsed 1089s
+[s1_dodec_r1_eta0.4_F_seed1] step 6000/6000 t=6000 Pin=6.463e-03 P0=5.382e-03 elapsed 1188s
+FINISHED ('s1_dodec_r1_eta0.4_F_seed1', 'done')
+[s1_dodec_r1_eta0.4_F_seed2] step 6000/6000 t=6000 Pin=7.728e-04 P0=1.293e-02 elapsed 1203s
+FINISHED ('s1_dodec_r1_eta0.4_F_seed2', 'done')
+[s1_dodec_r1_eta0.4_F_seed3] step 6000/6000 t=6000 Pin=8.414e-04 P0=1.258e-02 elapsed 1188s
+FINISHED ('s1_dodec_r1_eta0.4_F_seed3', 'done')
+[s1_dodec_r1_eta0.4_O_seed1] step 6000/6000 t=6000 Pin=2.402e-38 P0=2.021e-02 elapsed 1183s
+FINISHED ('s1_dodec_r1_eta0.4_O_seed1', 'done')
+[s1_dodec_r1_eta0.4_O_seed2] step 500/6000 t=500 Pin=1.075e-06 P0=1.584e-02 elapsed 92s
+[s1_dodec_r1_eta0.4_O_seed3] step 500/6000 t=500 Pin=2.794e-24 P0=1.515e-02 elapsed 94s
+[s1_dodec_r1_eta0.4_O_seed2] step 1000/6000 t=1000 Pin=1.339e-06 P0=1.722e-02 elapsed 183s
+[s1_dodec_r1_eta0.4_O_seed3] step 1000/6000 t=1000 Pin=2.481e-38 P0=1.515e-02 elapsed 189s
+[s1_dodec_r1_eta0.4_O_seed2] step 1500/6000 t=1500 Pin=1.333e-06 P0=1.761e-02 elapsed 283s
+[s1_dodec_r1_eta0.4_O_seed3] step 1500/6000 t=1500 Pin=2.780e-38 P0=1.515e-02 elapsed 289s
+[s1_dodec_r1_eta0.4_O_seed2] step 2000/6000 t=2000 Pin=1.331e-06 P0=1.884e-02 elapsed 377s
+[s1_dodec_r1_eta0.4_O_seed3] step 2000/6000 t=2000 Pin=2.503e-38 P0=1.515e-02 elapsed 383s
+[s1_dodec_r1_eta0.4_O_seed2] step 2500/6000 t=2500 Pin=1.337e-06 P0=1.928e-02 elapsed 467s
+[s1_dodec_r1_eta0.4_O_seed3] step 2500/6000 t=2500 Pin=2.732e-38 P0=1.515e-02 elapsed 475s
+[s1_dodec_r1_eta0.4_O_seed2] step 3000/6000 t=3000 Pin=1.336e-06 P0=1.942e-02 elapsed 566s
+[s1_dodec_r1_eta0.4_O_seed3] step 3000/6000 t=3000 Pin=3.907e-38 P0=1.515e-02 elapsed 578s
+[s1_dodec_r1_eta0.4_O_seed2] step 3500/6000 t=3500 Pin=1.337e-06 P0=1.948e-02 elapsed 669s
+[s1_dodec_r1_eta0.4_O_seed3] step 3500/6000 t=3500 Pin=3.160e-38 P0=1.515e-02 elapsed 685s
+[s1_dodec_r1_eta0.4_O_seed2] step 4000/6000 t=4000 Pin=1.339e-06 P0=1.951e-02 elapsed 770s
+[s1_dodec_r1_eta0.4_O_seed3] step 4000/6000 t=4000 Pin=3.097e-38 P0=1.515e-02 elapsed 778s
+[s1_dodec_r1_eta0.4_O_seed2] step 4500/6000 t=4500 Pin=1.340e-06 P0=1.970e-02 elapsed 861s
+[s1_dodec_r1_eta0.4_O_seed3] step 4500/6000 t=4500 Pin=3.212e-38 P0=1.515e-02 elapsed 870s
+[s1_dodec_r1_eta0.4_O_seed2] step 5000/6000 t=5000 Pin=1.340e-06 P0=1.997e-02 elapsed 949s
+[s1_dodec_r1_eta0.4_O_seed3] step 5000/6000 t=5000 Pin=2.573e-38 P0=1.515e-02 elapsed 961s
+[s1_dodec_r1_eta0.4_O_seed2] step 5500/6000 t=5500 Pin=1.339e-06 P0=1.998e-02 elapsed 1043s
+[s1_dodec_r1_eta0.4_O_seed3] step 5500/6000 t=5500 Pin=4.264e-38 P0=1.515e-02 elapsed 1053s
+[s1_dodec_r1_eta0.4_O_seed2] step 6000/6000 t=6000 Pin=1.339e-06 P0=1.998e-02 elapsed 1130s
+FINISHED ('s1_dodec_r1_eta0.4_O_seed2', 'done')
+[s1_dodec_r1_eta0.4_O_seed3] step 6000/6000 t=6000 Pin=3.449e-38 P0=1.515e-02 elapsed 1139s
+FINISHED ('s1_dodec_r1_eta0.4_O_seed3', 'done')
