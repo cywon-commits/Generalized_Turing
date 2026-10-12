@@ -1,0 +1,70 @@
+/home/user/Generalized_Turing/ring_sim/model.py:80: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
+/home/user/Generalized_Turing/ring_sim/model.py:80: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
+[v2s0_ctrlA_r1_eta0.083_R_seed1] step 2000/30000 t=2000 Pin=1.098e-06 P0=1.612e-04 elapsed 20s
+[v2s0_dodec_r1_eta0.09_R_seed1] step 2000/30000 t=2000 Pin=1.755e-06 P0=1.624e-04 elapsed 20s
+[v2s0_dodec_r1_eta0.083_R_seed1] step 2000/30000 t=2000 Pin=1.160e-06 P0=1.611e-04 elapsed 21s
+[v2s0_ctrlA_r1_eta0.09_R_seed1] step 2000/30000 t=2000 Pin=1.663e-06 P0=1.624e-04 elapsed 21s
+[v2s0_ctrlA_r1_eta0.083_R_seed1] step 4000/30000 t=4000 Pin=1.114e-06 P0=1.660e-04 elapsed 39s
+[v2s0_ctrlA_r1_eta0.09_R_seed1] step 4000/30000 t=4000 Pin=2.510e-06 P0=1.689e-04 elapsed 39s
+[v2s0_dodec_r1_eta0.09_R_seed1] step 4000/30000 t=4000 Pin=2.771e-06 P0=1.693e-04 elapsed 41s
+[v2s0_dodec_r1_eta0.083_R_seed1] step 4000/30000 t=4000 Pin=1.232e-06 P0=1.662e-04 elapsed 42s
+[v2s0_ctrlA_r1_eta0.083_R_seed1] step 6000/30000 t=6000 Pin=1.119e-06 P0=1.669e-04 elapsed 58s
+[v2s0_ctrlA_r1_eta0.09_R_seed1] step 6000/30000 t=6000 Pin=3.638e-06 P0=1.722e-04 elapsed 59s
+[v2s0_dodec_r1_eta0.09_R_seed1] step 6000/30000 t=6000 Pin=4.182e-06 P0=1.731e-04 elapsed 61s
+[v2s0_dodec_r1_eta0.083_R_seed1] step 6000/30000 t=6000 Pin=1.292e-06 P0=1.672e-04 elapsed 62s
+[v2s0_ctrlA_r1_eta0.083_R_seed1] step 8000/30000 t=8000 Pin=1.120e-06 P0=1.671e-04 elapsed 77s
+[v2s0_ctrlA_r1_eta0.09_R_seed1] step 8000/30000 t=8000 Pin=5.042e-06 P0=1.753e-04 elapsed 78s
+[v2s0_dodec_r1_eta0.083_R_seed1] step 8000/30000 t=8000 Pin=1.350e-06 P0=1.675e-04 elapsed 81s
+[v2s0_dodec_r1_eta0.09_R_seed1] step 8000/30000 t=8000 Pin=5.991e-06 P0=1.769e-04 elapsed 81s
+[v2s0_ctrlA_r1_eta0.09_R_seed1] step 10000/30000 t=10000 Pin=6.634e-06 P0=1.786e-04 elapsed 95s
+[v2s0_ctrlA_r1_eta0.083_R_seed1] step 10000/30000 t=10000 Pin=1.122e-06 P0=1.671e-04 elapsed 96s
+[v2s0_dodec_r1_eta0.09_R_seed1] step 10000/30000 t=10000 Pin=8.066e-06 P0=1.812e-04 elapsed 100s
+[v2s0_dodec_r1_eta0.083_R_seed1] step 10000/30000 t=10000 Pin=1.407e-06 P0=1.676e-04 elapsed 102s
+[v2s0_ctrlA_r1_eta0.09_R_seed1] step 12000/30000 t=12000 Pin=8.250e-06 P0=1.821e-04 elapsed 113s
+[v2s0_ctrlA_r1_eta0.083_R_seed1] step 12000/30000 t=12000 Pin=1.123e-06 P0=1.671e-04 elapsed 115s
+[v2s0_dodec_r1_eta0.09_R_seed1] step 12000/30000 t=12000 Pin=1.015e-05 P0=1.855e-04 elapsed 118s
+[v2s0_dodec_r1_eta0.083_R_seed1] step 12000/30000 t=12000 Pin=1.464e-06 P0=1.678e-04 elapsed 122s
+[v2s0_ctrlA_r1_eta0.09_R_seed1] step 14000/30000 t=14000 Pin=9.714e-06 P0=1.852e-04 elapsed 131s
+[v2s0_ctrlA_r1_eta0.083_R_seed1] step 14000/30000 t=14000 Pin=1.124e-06 P0=1.671e-04 elapsed 134s
+[v2s0_dodec_r1_eta0.09_R_seed1] step 14000/30000 t=14000 Pin=1.197e-05 P0=1.892e-04 elapsed 138s
+[v2s0_dodec_r1_eta0.083_R_seed1] step 14000/30000 t=14000 Pin=1.519e-06 P0=1.679e-04 elapsed 141s
+[v2s0_ctrlA_r1_eta0.09_R_seed1] step 16000/30000 t=16000 Pin=1.091e-05 P0=1.878e-04 elapsed 150s
+[v2s0_ctrlA_r1_eta0.083_R_seed1] step 16000/30000 t=16000 Pin=1.125e-06 P0=1.671e-04 elapsed 151s
+[v2s0_dodec_r1_eta0.09_R_seed1] step 16000/30000 t=16000 Pin=1.338e-05 P0=1.922e-04 elapsed 158s
+[v2s0_dodec_r1_eta0.083_R_seed1] step 16000/30000 t=16000 Pin=1.574e-06 P0=1.680e-04 elapsed 160s
+[v2s0_ctrlA_r1_eta0.09_R_seed1] step 18000/30000 t=18000 Pin=1.180e-05 P0=1.897e-04 elapsed 170s
+[v2s0_ctrlA_r1_eta0.083_R_seed1] step 18000/30000 t=18000 Pin=1.126e-06 P0=1.671e-04 elapsed 171s
+[v2s0_dodec_r1_eta0.09_R_seed1] step 18000/30000 t=18000 Pin=1.437e-05 P0=1.942e-04 elapsed 178s
+[v2s0_dodec_r1_eta0.083_R_seed1] step 18000/30000 t=18000 Pin=1.628e-06 P0=1.681e-04 elapsed 181s
+[v2s0_ctrlA_r1_eta0.083_R_seed1] step 20000/30000 t=20000 Pin=1.127e-06 P0=1.671e-04 elapsed 189s
+[v2s0_ctrlA_r1_eta0.09_R_seed1] step 20000/30000 t=20000 Pin=1.242e-05 P0=1.911e-04 elapsed 189s
+[v2s0_dodec_r1_eta0.09_R_seed1] step 20000/30000 t=20000 Pin=1.502e-05 P0=1.956e-04 elapsed 199s
+[v2s0_dodec_r1_eta0.083_R_seed1] step 20000/30000 t=20000 Pin=1.680e-06 P0=1.682e-04 elapsed 203s
+[v2s0_ctrlA_r1_eta0.083_R_seed1] step 22000/30000 t=22000 Pin=1.128e-06 P0=1.671e-04 elapsed 209s
+[v2s0_ctrlA_r1_eta0.09_R_seed1] step 22000/30000 t=22000 Pin=1.283e-05 P0=1.920e-04 elapsed 209s
+[v2s0_dodec_r1_eta0.09_R_seed1] step 22000/30000 t=22000 Pin=1.542e-05 P0=1.964e-04 elapsed 218s
+[v2s0_dodec_r1_eta0.083_R_seed1] step 22000/30000 t=22000 Pin=1.732e-06 P0=1.683e-04 elapsed 222s
+[v2s0_ctrlA_r1_eta0.09_R_seed1] step 24000/30000 t=24000 Pin=1.309e-05 P0=1.926e-04 elapsed 227s
+[v2s0_ctrlA_r1_eta0.083_R_seed1] step 24000/30000 t=24000 Pin=1.129e-06 P0=1.671e-04 elapsed 229s
+[v2s0_dodec_r1_eta0.09_R_seed1] step 24000/30000 t=24000 Pin=1.567e-05 P0=1.969e-04 elapsed 239s
+[v2s0_dodec_r1_eta0.083_R_seed1] step 24000/30000 t=24000 Pin=1.781e-06 P0=1.684e-04 elapsed 240s
+[v2s0_ctrlA_r1_eta0.09_R_seed1] step 26000/30000 t=26000 Pin=1.326e-05 P0=1.929e-04 elapsed 247s
+[v2s0_ctrlA_r1_eta0.083_R_seed1] step 26000/30000 t=26000 Pin=1.130e-06 P0=1.671e-04 elapsed 248s
+[v2s0_dodec_r1_eta0.083_R_seed1] step 26000/30000 t=26000 Pin=1.829e-06 P0=1.685e-04 elapsed 259s
+[v2s0_dodec_r1_eta0.09_R_seed1] step 26000/30000 t=26000 Pin=1.581e-05 P0=1.972e-04 elapsed 259s
+[v2s0_ctrlA_r1_eta0.09_R_seed1] step 28000/30000 t=28000 Pin=1.336e-05 P0=1.932e-04 elapsed 267s
+[v2s0_ctrlA_r1_eta0.083_R_seed1] step 28000/30000 t=28000 Pin=1.131e-06 P0=1.671e-04 elapsed 267s
+[v2s0_dodec_r1_eta0.083_R_seed1] step 28000/30000 t=28000 Pin=1.875e-06 P0=1.686e-04 elapsed 279s
+[v2s0_dodec_r1_eta0.09_R_seed1] step 28000/30000 t=28000 Pin=1.590e-05 P0=1.974e-04 elapsed 279s
+[v2s0_ctrlA_r1_eta0.09_R_seed1] step 30000/30000 t=30000 Pin=1.343e-05 P0=1.933e-04 elapsed 285s
+FINISHED ('v2s0_ctrlA_r1_eta0.09_R_seed1', 'done')
+[v2s0_ctrlA_r1_eta0.083_R_seed1] step 30000/30000 t=30000 Pin=1.131e-06 P0=1.671e-04 elapsed 286s
+FINISHED ('v2s0_ctrlA_r1_eta0.083_R_seed1', 'done')
+[v2s0_dodec_r1_eta0.083_R_seed1] step 30000/30000 t=30000 Pin=1.920e-06 P0=1.687e-04 elapsed 299s
+FINISHED ('v2s0_dodec_r1_eta0.083_R_seed1', 'done')
+[v2s0_dodec_r1_eta0.09_R_seed1] step 30000/30000 t=30000 Pin=1.595e-05 P0=1.975e-04 elapsed 299s
+FINISHED ('v2s0_dodec_r1_eta0.09_R_seed1', 'done')

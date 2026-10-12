@@ -11,6 +11,8 @@ from .model import Params, peak, solve_kappa, RATIOS
 from .integrator import Solver
 from .initcond import make_state
 from .diagnostics import Diag
+from .diag_v2 import DiagV2
+from .initcond_v2 import make_state_v2
 
 
 def load_config(path):
@@ -29,7 +31,7 @@ def build(cfg, workers=1):
     if "ku" in cfg and "kv" in cfg:
         ku, kv = cfg["ku"], cfg["kv"]
     elif r == 0:  # δ = 0 기준선: κ_v/κ_u = D_v/D_u, S 는 비율에 맞춤
-        ku, kv = solve_kappa(ratio, 0.0)[0], None
+        ku, kv = solve_kappa(ratio, 0.0, base)[0], None
         # δ=0 -> kv = ku*Dv/Du ; S=Dv ku + Du kv 를 맞춰 q1 이동을 결정
         from scipy.optimize import brentq
         s0, q0 = peak(base, 0)
@@ -40,8 +42,8 @@ def build(cfg, workers=1):
         ku = brentq(f, 0.0, 0.2)
         kv = ku * base.Dv / base.Du
     else:
-        ku, kv = solve_kappa(ratio, r)
-    par = Params(eta=cfg.get("eta", 0.4), ku=ku, kv=kv)
+        ku, kv = solve_kappa(ratio, r, base)
+    par = Params(Dv=base.Dv, eta=cfg.get("eta", 0.4), etap=cfg.get("etap_ratio", 0.0) * cfg.get("eta", 0.4), ku=ku, kv=kv)
     s0, q0 = peak(base, 0)
     k0 = np.sqrt(q0)
     R0 = cfg.get("R0", 56)
@@ -57,7 +59,8 @@ def run(cfg, workers=1, log=print):
     name = cfg["name"]
     ck = os.path.join(out, name + ".ckpt.npz")
     par, S, ratio, R0, k0, s0 = build(cfg, workers)
-    diag = Diag(S, ratio, R0, k0, tri_w=cfg.get("tri_w", 1.5))
+    v2 = cfg.get("diag") == "v2"
+    diag = DiagV2(S, ratio, R0, k0) if v2 else Diag(S, ratio, R0, k0, tri_w=cfg.get("tri_w", 1.5))
     T = cfg["T"]
     rec_dt = cfg.get("rec_dt", 20.0)
     ckpt_dt = cfg.get("ckpt_dt", 500.0)
@@ -69,10 +72,17 @@ def run(cfg, workers=1, log=print):
         V, step = z["V"], int(z["step"])
         series = list(z["series"])
         info = json.loads(str(z["info"]))
+        if v2:
+            diag.set_track(info)
         log(f"[{name}] resume at step {step}")
     else:
-        V, info = make_state(S, cfg["case"], ratio, cfg["ic"], cfg["seed"], R0, k0)
+        if v2:
+            V, info = make_state_v2(S, ratio, cfg["ic"], cfg["seed"], R0, cfg["A_sat"], cfg.get("ab_frac", 0.3))
+        else:
+            V, info = make_state(S, cfg["case"], ratio, cfg["ic"], cfg["seed"], R0, k0)
         step, series = 0, []
+        if v2:
+            diag.set_track(info)
         series.append(diag.record(V, 0.0))
     t0 = time.time()
     while step < nsteps:

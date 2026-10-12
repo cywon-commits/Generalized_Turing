@@ -5,7 +5,7 @@
 """
 import numpy as np
 import scipy.fft as sfft
-from .model import Params, lin_matrix, NLAYER
+from .model import Params, lin_matrix, NLAYER, nonlinear_u
 
 
 def _mm(A, B):
@@ -149,8 +149,7 @@ class Solver:
     def nonlin(self, V):
         """V: (2,4,K) 압축 Fourier 상태 -> N(V) 의 u 성분 (4,N,M)."""
         u = self.to_real(V[0])
-        eta, c = self.par.eta, self.par.c
-        Nu = eta * u * u - c * u * u * u
+        Nu = nonlinear_u(u, self.par)
         return self.to_hat(Nu)
 
     def _add_n(self, base, NV):

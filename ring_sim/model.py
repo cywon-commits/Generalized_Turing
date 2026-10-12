@@ -15,8 +15,17 @@ class Params:
     Dv: float = 2.55
     c: float = 1.0
     eta: float = 0.4
+    etap: float = 0.0  # v2: 층간 2차 항 η' u_n (u_{n+1}+u_{n-1})
     ku: float = 0.0
     kv: float = 0.0
+
+
+def nonlinear_u(u, par, axis=0):
+    """u 방정식의 비선형 반응항 η u² + η' u_n(u_{n+1}+u_{n-1}) - c u³ (층 축 = axis, 고리 주기)."""
+    out = par.eta * u * u - par.c * u * u * u
+    if par.etap != 0.0:
+        out = out + par.etap * u * (np.roll(u, 1, axis) + np.roll(u, -1, axis))
+    return out
 
 
 def s_p(p):

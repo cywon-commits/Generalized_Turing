@@ -17,8 +17,9 @@ def job(path):
 
 if __name__ == "__main__":
     stage = sys.argv[1]
+    cfgdir = sys.argv[3] if len(sys.argv) > 3 else "configs"
     n = int(sys.argv[2]) if len(sys.argv) > 2 else 4
-    paths = sorted(glob.glob(f"configs/stage{stage}/*.yaml"))
+    paths = sorted(glob.glob(f"{cfgdir}/stage{stage}/*.yaml"))
     with Pool(n) as p:
         for r in p.imap_unordered(job, paths):
             print("FINISHED", r, flush=True)

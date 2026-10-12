@@ -26,7 +26,10 @@ class Diag:
         tab = -np.ones(S.k2.shape, int)
         tab.ravel()[S.idx] = np.arange(S.K)
         self.tab = tab
-        T = enumerate_triangles(R0, ratio, tri_w)
+        if tri_w and tri_w > 0:
+            T = enumerate_triangles(R0, ratio, tri_w)
+        else:  # v2 진단은 격자 삼각형 목록을 쓰지 않는다 (피크 기반)
+            T = np.zeros((0, 6), int)
         self.ntri_lattice = len(T)
         self.tri = self._refs(T)
 
