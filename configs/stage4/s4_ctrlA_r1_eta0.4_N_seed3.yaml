@@ -1,0 +1,14 @@
+name: s4_ctrlA_r1_eta0.4_N_seed3
+stage: 4
+case: ctrlA
+r: 1
+eta: 0.4
+ic: N
+seed: 3
+N: 512
+R0: 56
+dt: 1.0
+T: 10000
+rec_dt: 20.0
+ckpt_dt: 500.0
+outdir: runs/stage4

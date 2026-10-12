@@ -1,0 +1,14 @@
+name: s1_dodec_r1_eta0.4_O_seed3
+stage: 1
+case: dodec
+r: 1
+eta: 0.4
+ic: O
+seed: 3
+N: 512
+R0: 56
+dt: 1.0
+T: 6000.0
+rec_dt: 20.0
+ckpt_dt: 500.0
+outdir: runs/stage1

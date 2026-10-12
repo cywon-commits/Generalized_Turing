@@ -1,0 +1,14 @@
+name: s3_oct_r1_eta0.4_F_seed2
+stage: 3
+case: oct
+r: 1
+eta: 0.4
+ic: F
+seed: 2
+N: 512
+R0: 56
+dt: 1.0
+T: 6000.0
+rec_dt: 20.0
+ckpt_dt: 500.0
+outdir: runs/stage3
