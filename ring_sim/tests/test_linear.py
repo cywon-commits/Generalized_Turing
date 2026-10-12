@@ -60,3 +60,18 @@ def test_simulated_growth_rates():
     unst = growth_rate(par, 0, q) > 0
     i0 = np.flatnonzero(unst)[np.argmax(rate[0][unst])]
     assert np.sqrt(q[i0]) == pytest.approx(k0, rel=0.01)
+
+
+def test_hermitian_projection():
+    """ky=0 열의 반-에르미트 성분은 실공간에 안 보이지만 반올림 오차로 σ0 로 자라 진단을 오염시킨다 -> 매 스텝 제거."""
+    par = Params(ku=0.08025, kv=0.19444, eta=0.4)
+    k0 = np.sqrt(peak(Params(), 0)[1])
+    N, R0 = 64, 7
+    S = Solver(par, N=N, L=2 * np.pi * R0 / k0, dt=1.0)
+    rng = np.random.default_rng(1)
+    V = S.state_from_real(1e-3 * rng.standard_normal((4, N, N)), np.zeros((4, N, N)))
+    V[0, :, S._h_pos[:4]] += 1e-3j  # 인위적 반-에르미트 섭동
+    V = S.step(V)
+    a = V[:, :, S._h_pos]
+    b = np.conj(V[:, S._h_pp][:, :, S._h_partner])
+    assert np.abs(a - b).max() < 1e-12 * max(1.0, np.abs(a).max())

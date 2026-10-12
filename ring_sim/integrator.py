@@ -110,6 +110,17 @@ class Solver:
         self.idx = np.flatnonzero(m.ravel())
         self.K = self.idx.size
         self._buf = np.zeros((NLAYER, self.N * (self.N // 2 + 1)), complex)
+        # ky=0 열의 에르미트 대칭 F[p,kx] = conj(F[-p,-kx]) 투영용 인덱스.
+        # c2r 변환이 반-에르미트 성분을 버리므로 반올림 오차에서 성장해도 실공간에 안 보이나,
+        # 진단(스펙트럼)을 오염시키므로 매 스텝 투영한다.
+        N, M = self.N, self.N // 2 + 1
+        pos = np.flatnonzero((self.idx % M) == 0)
+        ii = self.idx[pos] // M
+        tab = -np.ones(self.k2.shape, int)
+        tab.ravel()[self.idx] = np.arange(self.K)
+        self._h_pos = pos
+        self._h_partner = tab[(-ii) % N, 0]
+        self._h_pp = (-np.arange(NLAYER)) % NLAYER
 
     # --- 변환 (상태는 dealias 마스크 안의 파수만 압축 저장: (2,4,K)) ---
     def pack(self, fh):
@@ -146,6 +157,12 @@ class Solver:
         # base (2,4,K) + coef * N  (N 은 u 성분 하나)
         return base
 
+    def hermitize(self, V):
+        a = V[:, :, self._h_pos]
+        b = np.conj(V[:, self._h_pp][:, :, self._h_partner])
+        V[:, :, self._h_pos] = 0.5 * (a + b)
+        return V
+
     def step(self, V):
         Q, f1, f2, f3 = self.Q, self.f1, self.f2, self.f3  
         N1 = self.nonlin(V)
@@ -156,4 +173,4 @@ class Solver:
         N3 = self.nonlin(b)
         c = self._lin(self.E2, a) + Q * (2 * N3 - N1)
         N4 = self.nonlin(c)
-        return self._lin(self.E, V) + f1 * N1 + 2 * f2 * (N2 + N3) + f3 * N4
+        return self.hermitize(self._lin(self.E, V) + f1 * N1 + 2 * f2 * (N2 + N3) + f3 * N4)

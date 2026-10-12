@@ -45,6 +45,7 @@ def make_state(S, case, ratio, ic, seed, R0, k0, A_out=0.04, A_in=0.04, in_noise
             V[0, p, band] += in_noise * norm * np.exp(1j * ph) / 2
         # 아주 작은 백색 잡음으로 대칭 깨기
         V[0] += S.to_hat(1e-7 * rng.standard_normal(u.shape))
+    S.hermitize(V)
     # v 성분: 정상 관계 v = u / (d + s κv + Dv q)
     par = S.par
     q = S.k2.ravel()[S.idx]
