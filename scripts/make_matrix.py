@@ -22,7 +22,7 @@ def matrix():
     for case, ic, seed in itertools.product(["hex", "oct", "dec"], ["O", "F"], range(1, 3)):
         M.append(cfg(3, case, 1, 0.4, ic, seed))
     for case, seed in itertools.product(["dodec", "ctrlA"], range(1, 4)):
-        M.append(cfg(4, case, 1, 0.4, "N", seed, T=10000))
+        M.append(cfg(4, case, 1, 0.4, "N", seed, T=6000))
     for seed in range(1, 3):
         M.append(cfg(5, "dodec", 0, 0.4, "F", seed))
     return M

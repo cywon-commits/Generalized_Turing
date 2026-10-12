@@ -8,7 +8,7 @@ seed: 2
 N: 512
 R0: 56
 dt: 1.0
-T: 10000
+T: 6000
 rec_dt: 20.0
 ckpt_dt: 500.0
 outdir: runs/stage4
