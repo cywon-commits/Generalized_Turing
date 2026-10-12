@@ -1,16 +1,12 @@
-FINISHED ('s3_dec_r1_eta0.4_F_seed1', 'skip')
 FINISHED ('s3_dec_r1_eta0.4_F_seed2', 'skip')
+FINISHED ('s3_dec_r1_eta0.4_O_seed2', 'skip')
 FINISHED ('s3_hex_r1_eta0.4_F_seed2', 'skip')
+FINISHED ('s3_hex_r1_eta0.4_F_seed1', 'skip')
 FINISHED ('s3_hex_r1_eta0.4_O_seed1', 'skip')
 FINISHED ('s3_hex_r1_eta0.4_O_seed2', 'skip')
-FINISHED ('s3_hex_r1_eta0.4_F_seed1', 'skip')
 FINISHED ('s3_dec_r1_eta0.4_O_seed1', 'skip')
-FINISHED ('s3_dec_r1_eta0.4_O_seed2', 'skip')
-[s3_oct_r1_eta0.4_F_seed1] resume at step 4000
-[s3_oct_r1_eta0.4_O_seed2] resume at step 3000
-[s3_oct_r1_eta0.4_F_seed2] resume at step 3500[s3_oct_r1_eta0.4_O_seed1] resume at step 3500
-
-[s3_oct_r1_eta0.4_O_seed1] step 4000/6000 t=4000 Pin=3.156e-33 P0=1.451e-02 elapsed 133s
-[s3_oct_r1_eta0.4_F_seed2] step 4000/6000 t=4000 Pin=1.792e-03 P0=1.069e-02 elapsed 133s
-[s3_oct_r1_eta0.4_F_seed1] step 4500/6000 t=4500 Pin=2.425e-03 P0=1.477e-02 elapsed 134s
-[s3_oct_r1_eta0.4_O_seed2] step 3500/6000 t=3500 Pin=5.503e-38 P0=1.374e-02 elapsed 135s
+FINISHED ('s3_dec_r1_eta0.4_F_seed1', 'skip')
+[s3_oct_r1_eta0.4_F_seed1] resume at step 5500
+[s3_oct_r1_eta0.4_O_seed2] resume at step 4500
+[s3_oct_r1_eta0.4_F_seed2] resume at step 5000
+[s3_oct_r1_eta0.4_O_seed1] resume at step 5000
