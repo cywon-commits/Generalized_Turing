@@ -1,0 +1,5 @@
+/home/user/Generalized_Turing/ring_sim/model.py:80: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
+dense top 14 (λ/σ0, κ): [(0.0, (0.0, 0.0)), (0.0, (0.0, 0.0)), (-0.0594, (0.0, 1.0)), (-0.0594, (5.0, 1.0)), (-0.3028, (0.0, 1.0)), (-0.3028, (5.0, 1.0)), (-0.3613, (0.0, 0.0)), (-0.3802, (0.0, 0.0)), (-0.4404, (5.0, 0.0)), (-0.4404, (5.0, 0.0)), (-0.6258, (0.0, 1.0)), (-0.6258, (5.0, 1.0)), (-0.7543, (5.0, 0.0)), (-0.7543, (5.0, 0.0))]
+Arnoldi (N=96, dt=4, τ=1/σ0) top λ/σ0: [0.0, 0.0, -0.0589, -0.0589, -0.3026, -0.3026, -0.3612, -0.38] time 156s

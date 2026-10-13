@@ -1,0 +1,5 @@
+/home/user/Generalized_Turing/ring_sim/model.py:80: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
+dense κ=b' top λ/σ0: [-2.1489, -3.8798, -3.887, -4.0705]
+tangent-flow decay slope (t in [0.6τ,1.5τ]) λ/σ0 = -2.1667
