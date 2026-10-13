@@ -10,7 +10,7 @@ seed: 1
 N: 128
 R0: 14
 dt: 1.0
-T: 30000
+T: 120000
 rec_dt: 200.0
 ckpt_dt: 2000.0
 outdir: runs_v2/stage0
