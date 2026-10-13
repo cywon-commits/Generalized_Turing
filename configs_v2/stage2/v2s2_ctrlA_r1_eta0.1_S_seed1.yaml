@@ -10,9 +10,11 @@ seed: 1
 N: 256
 R0: 28
 dt: 1.0
-T: 120000
+T: 72000
 rec_dt: 600.0
 ckpt_dt: 2000.0
 outdir: runs_v2/stage2
 diag: v2
 A_sat: 0.018153639577850524
+note: 'stopped early: stationary rhombus plateau from t~45000 (checkpoint series extends
+  to ckpt step)'
