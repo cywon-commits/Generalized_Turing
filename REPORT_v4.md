@@ -76,7 +76,7 @@
 
 ## 7. 재현
 ```
-python scripts/v4_make_lattices (ring_sim/network.py: search_network) -> results_v4/network_lattices.json
+python scripts/v4_make_lattices.py   # 정확 격자 -> results_v4/network_lattices.json
 OMP_NUM_THREADS=1 python scripts/v4_branch.py n8s 0.15 0.18 0.01         # 가지 연속 (대칭 부분공간 Newton + 전체 공간 Arnoldi)
 OMP_NUM_THREADS=1 python scripts/v4_reeval.py 0.114 ... 0.18             # 사영 후 재평가, 불안정 고유벡터 구성
 python scripts/v4_bistable.py 0.14 ; python scripts/v4_bistable_traj.py 0.14
