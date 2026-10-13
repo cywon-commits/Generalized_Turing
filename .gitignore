@@ -4,3 +4,4 @@ runs/**/*.ckpt.npz
 runs/**/*.final.npz
 .pytest_cache/
 runs_v5/
+runs_v4/*.npy
