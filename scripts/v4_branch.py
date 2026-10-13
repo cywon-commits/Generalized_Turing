@@ -13,6 +13,11 @@ LAT = json.load(open("results_v4/network_lattices.json"))
 
 
 def lattice(n):
+    if os.environ.get("CX"):  # v5: Pell 근사체 (n=8 만): CX=10,24,58 -> 안쪽 (p,q), p=CX/2, q=round(p tan(π/8))
+        from ring_sim.network import build_from_params, outer_from_inner, errors
+        cx = int(os.environ["CX"]); p = cx // 2; q = int(round(p * np.tan(np.pi / 8)))
+        I = build_from_params(8, (p, q)); c = outer_from_inner(I)
+        return I, c, cx, int(os.environ.get("NGRID", {10: 96, 24: 240, 58: 576}[cx]))
     d = LAT[str(n)]["best"]
     return [np.array(v) for v in d["inner"]], [np.array(v) for v in d["outer"]], d["Cx"], LAT[str(n)]["N"]
 
@@ -82,7 +87,7 @@ if __name__ == "__main__":
     inner, outer, Cx, N = lattice(n)
     rho = 2 * np.cos(np.pi / n)
     etas = list(np.round(np.arange(e0, e1 - 1e-9 if de < 0 else e1 + 1e-9, de), 4))
-    os.makedirs("results_v4/stages", exist_ok=True)
+    os.makedirs("results_v4/stages", exist_ok=True); os.makedirs("runs_v4", exist_ok=True)
     x_prev = np.load(os.environ['START_X']) if os.environ.get('START_X') else None
     results = []
     for eta in etas:
