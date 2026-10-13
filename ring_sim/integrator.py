@@ -162,14 +162,16 @@ class Solver:
         V[:, :, self._h_pos] = 0.5 * (a + b)
         return V
 
-    def step(self, V):
-        Q, f1, f2, f3 = self.Q, self.f1, self.f2, self.f3  
-        N1 = self.nonlin(V)
+    def step(self, V, nl=None):
+        """ETDRK4 한 스텝. nl: 비선형항 함수 V -> (4,K) (기본: 반응항; 선형화 흐름에서는 야코비안-벡터 곱)"""
+        nonlin = nl or self.nonlin
+        Q, f1, f2, f3 = self.Q, self.f1, self.f2, self.f3
+        N1 = nonlin(V)
         EV2 = self._lin(self.E2, V)
         a = EV2 + Q * N1
-        N2 = self.nonlin(a)
+        N2 = nonlin(a)
         b = EV2 + Q * N2
-        N3 = self.nonlin(b)
+        N3 = nonlin(b)
         c = self._lin(self.E2, a) + Q * (2 * N3 - N1)
-        N4 = self.nonlin(c)
+        N4 = nonlin(c)
         return self.hermitize(self._lin(self.E, V) + f1 * N1 + 2 * f2 * (N2 + N3) + f3 * N4)
