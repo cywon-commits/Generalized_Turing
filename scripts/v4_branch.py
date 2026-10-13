@@ -87,6 +87,7 @@ if __name__ == "__main__":
     inner, outer, Cx, N = lattice(n)
     rho = 2 * np.cos(np.pi / n)
     etas = list(np.round(np.arange(e0, e1 - 1e-9 if de < 0 else e1 + 1e-9, de), 4))
+    if os.environ.get('ETAS'): etas = [float(x) for x in os.environ['ETAS'].split(',')]
     os.makedirs("results_v4/stages", exist_ok=True); os.makedirs("runs_v4", exist_ok=True)
     x_prev = np.load(os.environ['START_X']) if os.environ.get('START_X') else None
     results = []
