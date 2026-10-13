@@ -116,14 +116,14 @@ if __name__ == "__main__":
             u = np.zeros((4, N, N))
             for j in outs:
                 arg = 2 * np.pi * (outer[j][0] * net.X + outer[j][1] * net.Y) / net.L
-                u += A_SAT * 0.45 * np.cos(arg)[None]
+                u += A_SAT * float(os.environ.get('OUT_AMP', 0.45)) * np.cos(arg)[None]
             for m in ins:
                 if sector == "standing":
                     u += net.mode_field(inner[m], 0.25 * A_SAT, 0.0, 1, 1)
                 else:  # 나선형 교대: s = 1, 3, 1, 3, ...
                     u += net.mode_field(inner[m], 0.5 * A_SAT, 0.0, 1 if m % 2 == 0 else 0, 0 if m % 2 == 0 else 1)
             V = net.v_from_u(u); x = net.to_vec(net.S.to_real(V[0]), net.S.to_real(V[1]))
-            x = net.relax(x, 6e4)
+            x = net.relax(x, float(os.environ.get('RELAX_T', 6e4)))
         else:
             x = x_prev
         if x_prev is None:
