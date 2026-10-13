@@ -1,0 +1,9 @@
+/home/user/Generalized_Turing/ring_sim/model.py:25: RuntimeWarning: overflow encountered in multiply
+  out = par.eta * u * u - par.c * u * u * u
+/home/user/Generalized_Turing/ring_sim/model.py:25: RuntimeWarning: invalid value encountered in subtract
+  out = par.eta * u * u - par.c * u * u * u
+/home/user/Generalized_Turing/ring_sim/model.py:27: RuntimeWarning: overflow encountered in multiply
+  out = out + par.etap * u * (np.roll(u, 1, axis) + np.roll(u, -1, axis))
+/home/user/Generalized_Turing/ring_sim/model.py:27: RuntimeWarning: invalid value encountered in add
+  out = out + par.etap * u * (np.roll(u, 1, axis) + np.roll(u, -1, axis))
+η=0.18: Newton-Krylov failed (NoConvergence)
