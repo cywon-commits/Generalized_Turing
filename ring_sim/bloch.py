@@ -275,7 +275,12 @@ def find_states(cell0, A_sat, seeds=("sym_standing", "std_phases", "spiral_p1p3"
             rng = np.random.default_rng(100 * rep + 7)
             X = SEEDS[sname](cell0, A_sat, rng)
             X, _ = relax(cell0, X, T=T, h=h)
-            X, r, it = newton(cell0, X)
+            if not np.all(np.isfinite(X)):  # 이완이 발산한 씨앗은 건너뜀 (v5: 큰 η)
+                continue
+            try:
+                X, r, it = newton(cell0, X)
+            except ValueError:
+                continue
             if r > 1e-10:
                 continue
             info = classify_state(cell0, X)
