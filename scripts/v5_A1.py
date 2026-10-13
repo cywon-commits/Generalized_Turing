@@ -53,6 +53,12 @@ def init_state(case, eta, ic, seed, S, N):
         V = S.state_from_real(u, v)
         info = dict(ic="R", c=[Cx, 0], a=list(map(int, a)), b=list(map(int, b)), amp=st[0]["info"])
         return V, info
+    if ic == "T":  # v4 N8-S (96², Cx=10) 를 3×3 으로 이어 붙이고 잡음 1e-5
+        x = np.load(f"runs_v4/n8s_eta{eta}.npy").reshape(2, 4, 96, 96)
+        u = np.tile(x[0], (1, 3, 3)); v = np.tile(x[1], (1, 3, 3))
+        u = u + 1e-5 * rng.standard_normal(u.shape)
+        V = S.state_from_real(u, v)
+        return V, dict(ic="T", c=[Cx, 0], a=[15, 6], b=[15, -6])
     V, info = make_state_v2(S, CASES[case], ic, seed, Cx, A_SAT)
     return V, info
 
@@ -124,6 +130,9 @@ def jobs_list():
     for case in ("oct", "ctrlL"):
         for seed in (0, 1):
             J.append((case, 0.16, "N", seed))
+    for eta in (0.16, 0.15):
+        for seed in (0, 1):
+            J.append(("oct", eta, "T", seed))
     return J
 
 
