@@ -1,0 +1,7 @@
+/home/user/Generalized_Turing/ring_sim/model.py:80: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
+η=0.118: res=2.1e-13 ok=True outer=['3.80e-03', '3.03e-03', '3.80e-03', '3.03e-03'] inner(p1)=['2.0e-03', '2.0e-03', '2.0e-03', '2.0e-03'] maxλ=0.5701282031743166 eig=['0.570', '0.000', '-0.000', '-0.120', '-0.120', '-0.223'] [212s]
+η=0.116: res=3.1e-13 ok=True outer=['3.95e-03', '2.78e-03', '3.95e-03', '2.78e-03'] inner(p1)=['1.8e-03', '1.8e-03', '1.8e-03', '1.8e-03'] maxλ=0.6781618187714878 eig=['0.678', '0.000', '-0.000', '-0.126', '-0.126', '-0.167'] [217s]
+η=0.114: res=7.9e-12 ok=True outer=['4.11e-03', '2.54e-03', '4.11e-03', '2.54e-03'] inner(p1)=['1.7e-03', '1.7e-03', '1.7e-03', '1.7e-03'] maxλ=0.7324385290950691 eig=['0.732', '0.030', '0.000', '-0.000', '-0.127', '-0.127'] [212s]
+η=0.112: Newton-Krylov failed (NoConvergence)

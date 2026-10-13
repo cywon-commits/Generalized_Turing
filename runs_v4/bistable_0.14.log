@@ -1,0 +1,14 @@
+/home/user/Generalized_Turing/ring_sim/model.py:80: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
+rhombus unconstrained residual after projection: 5.6e-14
+rhombus (standing) NK residual 5.6e-14
+rhombus full-domain Arnoldi λ/σ0: [0.0, 0.0, -0.0467, -0.0467, -0.0771, -0.1384, -0.1384, -0.6134]
+alignment shift (np.int64(6), np.int64(24))
+s=0.0: final outer|F0|=['1.51e-02', '1.99e-20', '5.04e-17', '1.00e-20'] inner p1=['7.8e-03', '1.6e-20', '1.8e-20', '7.8e-03'] -> rhombus/chain (1 outer) [40s]
+s=0.2: final outer|F0|=['1.51e-02', '1.27e-20', '5.51e-05', '1.81e-20'] inner p1=['7.8e-03', '1.4e-20', '2.6e-20', '7.8e-03'] -> rhombus/chain (1 outer) [45s]
+s=0.4: final outer|F0|=['1.51e-02', '2.92e-20', '1.34e-04', '1.06e-20'] inner p1=['7.8e-03', '3.1e-20', '7.5e-21', '7.8e-03'] -> rhombus/chain (1 outer) [39s]
+s=0.5: final outer|F0|=['3.74e-03', '4.06e-03', '3.74e-03', '4.06e-03'] inner p1=['3.1e-03', '3.1e-03', '3.1e-03', '3.1e-03'] -> network(4 outer) [44s]
+s=0.6: final outer|F0|=['3.74e-03', '4.06e-03', '3.74e-03', '4.06e-03'] inner p1=['3.1e-03', '3.1e-03', '3.1e-03', '3.1e-03'] -> network(4 outer) [40s]
+s=0.8: final outer|F0|=['3.74e-03', '4.06e-03', '3.74e-03', '4.06e-03'] inner p1=['3.1e-03', '3.1e-03', '3.1e-03', '3.1e-03'] -> network(4 outer) [40s]
+s=1.0: final outer|F0|=['3.74e-03', '4.06e-03', '3.74e-03', '4.06e-03'] inner p1=['3.1e-03', '3.1e-03', '3.1e-03', '3.1e-03'] -> network(4 outer) [39s]

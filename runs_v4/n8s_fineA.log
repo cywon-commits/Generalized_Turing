@@ -1,0 +1,6 @@
+/home/user/Generalized_Turing/ring_sim/model.py:80: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
+η=0.138: res=3.6e-13 ok=True outer=['3.74e-03', '4.09e-03', '3.74e-03', '4.09e-03'] inner(p1)=['2.9e-03', '2.9e-03', '2.9e-03', '2.9e-03'] maxλ=-0.25111535241679317 eig=['0.000', '-0.000', '-0.251', '-0.251', '-0.252', '-0.294'] [173s]
+η=0.136: res=7.2e-13 ok=True outer=['3.76e-03', '4.07e-03', '3.76e-03', '4.07e-03'] inner(p1)=['2.8e-03', '2.8e-03', '2.8e-03', '2.8e-03'] maxλ=0.08171490586816457 eig=['0.082', '0.000', '-0.000', '-0.248', '-0.248', '-0.266'] [152s]
+η=0.134: res=5.2e-12 ok=True outer=['3.79e-03', '4.02e-03', '3.79e-03', '4.02e-03'] inner(p1)=['2.7e-03', '2.7e-03', '2.7e-03', '2.7e-03'] maxλ=0.27961865729687696 eig=['0.280', '0.000', '-0.000', '-0.235', '-0.239', '-0.239'] [155s]

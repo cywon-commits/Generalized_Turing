@@ -1,0 +1,9 @@
+relaxed state η=0.18: outer|F0|=['4.92e-03', '2.34e-03', '1.92e-03', '1.92e-03', '2.34e-03'] inner(p1,p3)=['(1.1e-02,1.1e-02)', '(7.2e-03,7.2e-03)', '(7.6e-03,7.6e-03)', '(7.2e-03,7.2e-03)', '(1.1e-02,1.1e-02)']
+/home/user/Generalized_Turing/ring_sim/model.py:25: RuntimeWarning: overflow encountered in multiply
+  out = par.eta * u * u - par.c * u * u * u
+/home/user/Generalized_Turing/ring_sim/model.py:25: RuntimeWarning: invalid value encountered in subtract
+  out = par.eta * u * u - par.c * u * u * u
+/home/user/Generalized_Turing/ring_sim/model.py:27: RuntimeWarning: overflow encountered in multiply
+  out = out + par.etap * u * (np.roll(u, 1, axis) + np.roll(u, -1, axis))
+/home/user/Generalized_Turing/ring_sim/model.py:27: RuntimeWarning: invalid value encountered in add
+  out = out + par.etap * u * (np.roll(u, 1, axis) + np.roll(u, -1, axis))

@@ -1,0 +1,10 @@
+/home/user/Generalized_Turing/ring_sim/model.py:80: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
+s=0.0: final outer ['1.51e-02', '2.28e-20', '4.97e-17', '2.36e-20'] -> rhombus
+s=0.3: final outer ['1.51e-02', '1.90e-20', '9.90e-05', '1.26e-20'] -> rhombus
+s=0.4: final outer ['1.51e-02', '8.18e-21', '1.34e-04', '2.04e-20'] -> rhombus
+s=0.45: final outer ['1.51e-02', '4.23e-20', '1.42e-04', '1.75e-20'] -> rhombus
+s=0.5: final outer ['3.74e-03', '4.06e-03', '3.74e-03', '4.06e-03'] -> network
+s=0.6: final outer ['3.74e-03', '4.06e-03', '3.74e-03', '4.06e-03'] -> network
+s=1.0: final outer ['3.74e-03', '4.06e-03', '3.74e-03', '4.06e-03'] -> network

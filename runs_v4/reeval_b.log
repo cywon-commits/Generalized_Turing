@@ -1,0 +1,10 @@
+/home/user/Generalized_Turing/ring_sim/model.py:80: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  sol = fsolve(f, [0.07, 0.17], xtol=1e-12)
+0.136 res(full)=7.2e-13 max nonneutral λ/σ0=0.0817 eig [np.float64(0.082), np.float64(0.0), np.float64(0.0), np.float64(-0.248), np.float64(-0.248), np.float64(-0.266)] [65s]
+0.138 res(full)=3.6e-13 max nonneutral λ/σ0=-0.2511 eig [np.float64(0.0), np.float64(0.0), np.float64(-0.251), np.float64(-0.251), np.float64(-0.252), np.float64(-0.294)] [59s]
+0.14 res(full)=1.4e-16 max nonneutral λ/σ0=-0.2498 eig [np.float64(0.0), np.float64(0.0), np.float64(-0.25), np.float64(-0.25), np.float64(-0.313), np.float64(-0.357)] [63s]
+0.15 res(full)=2.6e-16 max nonneutral λ/σ0=-0.2306 eig [np.float64(0.0), np.float64(0.0), np.float64(-0.231), np.float64(-0.231), np.float64(-0.236), np.float64(-0.387)] [58s]
+0.16 res(full)=2.8e-16 max nonneutral λ/σ0=-0.0851 eig [np.float64(0.0), np.float64(0.0), np.float64(-0.085), np.float64(-0.214), np.float64(-0.214), np.float64(-0.428)] [66s]
+0.17 res(full)=1.2e-13 max nonneutral λ/σ0=-0.0446 eig [np.float64(0.0), np.float64(0.0), np.float64(-0.045), np.float64(-0.207), np.float64(-0.207), np.float64(-0.332)] [61s]
+0.18 res(full)=1.5e-14 max nonneutral λ/σ0=-0.0809 eig [np.float64(-0.0), np.float64(-0.0), np.float64(-0.081), np.float64(-0.202), np.float64(-0.202), np.float64(-0.28)] [72s]
