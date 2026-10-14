@@ -105,8 +105,9 @@ def coefficients(M, ic, ib):
     beta, qprod = w[i].real, float(qs[i])
     q_other = float(np.sum(np.abs(qs)) - abs(qs[i]))
     lam2 = 0.5 * (alpha + beta) + np.sqrt((0.5 * (alpha - beta)) ** 2 + qprod + 0j)
+    rl = (vr[:, i], vl[:, i] / np.vdot(vl[:, i], vr[:, i]))
     return dict(alpha=float(alpha), beta=float(beta), qprod=float(qprod), q_other=q_other,
-                beta_max=float(np.max(w.real)), Lam2=float(lam2.real))
+                beta_max=float(np.max(w.real)), Lam2=float(lam2.real), _rl=rl)
 
 
 def channel_contributions(parts, d_idx, lam, Jt, V, T):
