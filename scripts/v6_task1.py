@@ -36,16 +36,14 @@ def analyse(c0, ck, par, k0, k1, X0, kind, incl12, nev_full=True):
         j12 = min((j for j in range(ck.M) if j not in (jc, jb)), key=lambda j: abs(ck.q[j] - Ks))
         picks.append((j12, 0))
     R, Lf = F.basis_vectors(ck, par, picks)
-    lam, M, parts = F.self_consistent(Jt, R, Lf)
-    M0, _ = F.schur(Jt, R, Lf, 0.0)
+    lam, M, parts, M0 = F.self_consistent(Jt, R, Lf)
     ib = list(range(1, 1 + len(bps)))
     co = F.coefficients(M, 0, ib)
     co0 = F.coefficients(M0, 0, ib)
     out = dict(kind=kind, incl12=incl12, d=len(picks), lam_self=lam, **co, static=co0)
     # 전체 고유값: P 성분 비중이 큰 고유벡터 중 최대
     w, V = np.linalg.eig(Jt)
-    Tm = np.linalg.inv(np.concatenate([R, __import__("scipy.linalg", fromlist=["x"]).null_space(Lf.conj().T)], 1))
-    co_v = Tm @ V
+    co_v = parts[5] @ V
     wt = (np.abs(co_v[:len(picks)]) ** 2).sum(0) / (np.abs(co_v) ** 2).sum(0)
     cand = np.where(wt > 0.3)[0]
     i = cand[np.argmax(w[cand].real)] if len(cand) else int(np.argmax(w.real))
@@ -66,8 +64,13 @@ def run(job):
     res = dict(case=case, eta=eta, sigma0=s0, k0=k0, k1=k1, lattice=lat, M0=c0.M, Mk=ck.M, states=[])
     Xs, rs = stripe_state(c0)
     states = [dict(type="stripe", X=Xs, info=classify_state(c0, Xs))]
+    seen = []
     for f in find_states(c0, A_SAT, T=3e5):
         if f["info"]["type"] in ("standing", "spiral"):
+            key = (f["info"]["type"], round(f["info"]["Aa"] ** 2, 7))
+            if any(k[0] == key[0] and abs(k[1] - key[1]) < 0.02 * key[1] for k in seen):
+                continue
+            seen.append(key)
             states.append(dict(type=f["info"]["type"], X=f["X"], info=f["info"]))
     for st in states:
         info = st["info"]
