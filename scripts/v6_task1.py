@@ -80,15 +80,19 @@ def run(job):
         for kind in kinds:
             for incl in (False, True):
                 o, _ = analyse(c0, ck, par, k0, k1, st["X"], kind, incl)
-                for key in ("alpha", "beta", "qprod", "lam_self", "lam_full", "lam_full_max_any"):
-                    pass
-                ent["runs"].append(o)
+                                ent["runs"].append(o)
         # 진폭 스캔 (정상파형/나선형만): 줄무늬 상태와의 보간
         if st["type"] != "stripe":
             kind = "standing" if st["type"] == "standing" else "p1"
             scan = []
+            # 위상 맞춘 줄무늬 (c 의 위상을 마름모와 일치) 와의 보간: c 의 배수 모드 (m=n) 는 f², 그 밖 모드는 f 가중
+            jc0 = c0.lookup[(1, 1)]
+            phi = np.angle(st["X"][0, jc0]) - np.angle(Xs[0, jc0])
+            Xa = Xs.copy()
+            Xa = Xa * np.exp(1j * phi * c0.m)[None, :]
+            wgt = lambda f: np.where(c0.m == c0.n, f ** 2, f)[None, :]
             for f in FS:
-                Xf = Xs + f * (st["X"] - Xs)
+                Xf = Xa + wgt(f) * (st["X"] - Xa)
                 sf = float(classify_state(c0, Xf)["Aa"] ** 2)
                 o, _ = analyse(c0, ck, par, k0, k1, Xf, kind, False)
                 scan.append(dict(f=f, s=sf, **{k: o[k] for k in ("alpha", "beta", "qprod", "lam_full", "lam_self")}))

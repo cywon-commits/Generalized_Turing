@@ -26,7 +26,7 @@ for fn in sorted(glob.glob("results_v6/task1/*.json")):
         for run in ent["runs"]:
             rows.append(dict(case=case, eta=eta, type=ent["type"], branch=br, kind=run["kind"], incl12=run["incl12"], s=ent["s"],
                              alpha0_over_s0=a0 / s0, beta0_over_s0=b0 / s0, X_over_s0=X / s0, Y_over_s0=Y / s0, Qc_over_s0sq=Qc / s0 ** 2,
-                             alpha_s=run["alpha"] / s0, beta_s=run["beta"] / s0, qprod_s=run["qprod"] / s0 ** 2, degenerate=run["degenerate"],
+                             alpha_s=run["alpha"] / s0, beta_s=run["beta"] / s0, qprod_s=run["qprod"] / s0 ** 2, q_other=run["q_other"],
                              R=R, s_star=sstar, Lam_formula_at_s=float(lam(ent["s"])) / s0, Lam2_actual=run["Lam2"] / s0,
                              lam_eff_self=run["lam_self"] / s0, lam_full=run["lam_full"] / s0, lam_full_weight=run["lam_full_weight"],
                              fit_resid_alpha=ra / s0, fit_resid_beta=rb / s0, quad_alpha=pa2[0] * ent["s"] ** 2 / s0, quad_beta=pb2[0] * ent["s"] ** 2 / s0))

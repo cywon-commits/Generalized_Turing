@@ -87,25 +87,26 @@ def self_consistent(Jt, R, Lf, lam0=None, iters=1000, tol=1e-13):
     return lam, Meff(lam), (Jpp, Jpq, Jqp, Jqq, V, T), Meff(0.0)
 
 
-def coefficients(M, ic, ib, deg_tol=1e-3):
+def coefficients(M, ic, ib):
     """M: 유효 행렬 (d x d). ic: c′ 인덱스, ib: b′ 인덱스 목록.
-    α = M[c′,c′]; β = b′ 블록의 최대 고유값.
-    결합 곱: b′ 블록이 (거의) 축퇴(두 고유값 차 < deg_tol·|β|)이면 c′ 가 두 b′ 와 결합하므로 M_cb · M_bc (합산) 를 쓴다.
-    비축퇴이면 지배 고유벡터 방향으로 사영한 곱 (좌·우 쌍직교 정규화). 둘 다 기록한다."""
+    α = M[c′,c′].  b′ 블록 B 의 고유쌍 (우 r_i, 좌 l_i, l_i^H r_i = 1) 중 c′ 와 가장 강하게 결합하는 것
+    (|q_i| = |M_cb r_i · l_i^H M_bc| 최대, 반사 대칭 때문에 보통 하나만 결합) 을 지배 b′ 모드로 택한다: β = 그 고유값, q = 결합 곱.
+    다른 고유쌍의 결합은 q_other 로 기록 (≈0 이어야 2x2 환원이 정확).  Λ2 = 2x2 환원의 최대 고유값."""
     alpha = M[ic, ic].real
     Bb = M[np.ix_(ib, ib)]
     w, vl, vr = sla.eig(Bb, left=True, right=True)
-    i = int(np.argmax(w.real))
-    r, l = vr[:, i], vl[:, i]
-    l = l / np.vdot(l, r)
-    beta = w[i].real
-    q_dom = ((M[ic, ib] @ r) * np.vdot(l, M[ib, ic])).real
-    q_dot = (M[ic, ib] @ M[ib, ic]).real
-    deg = len(ib) > 1 and (np.ptp(w.real) < deg_tol * abs(beta))
-    qprod = q_dot if (deg or len(ib) == 1) else q_dom
+    qs = []
+    for i in range(len(w)):
+        r, l = vr[:, i], vl[:, i]
+        l = l / np.vdot(l, r)
+        qs.append(((M[ic, ib] @ r) * np.vdot(l, M[ib, ic])).real)
+    qs = np.array(qs)
+    i = int(np.argmax(np.abs(qs)))
+    beta, qprod = w[i].real, float(qs[i])
+    q_other = float(np.sum(np.abs(qs)) - abs(qs[i]))
     lam2 = 0.5 * (alpha + beta) + np.sqrt((0.5 * (alpha - beta)) ** 2 + qprod + 0j)
-    return dict(alpha=float(alpha), beta=float(beta), qprod=float(qprod), q_dot=float(q_dot), q_dom=float(q_dom),
-                degenerate=bool(deg), Lam2=float(lam2.real))
+    return dict(alpha=float(alpha), beta=float(beta), qprod=float(qprod), q_other=q_other,
+                beta_max=float(np.max(w.real)), Lam2=float(lam2.real))
 
 
 def channel_contributions(parts, d_idx, lam, Jt, V, T):
