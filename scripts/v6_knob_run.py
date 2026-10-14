@@ -47,8 +47,15 @@ def fillin_analysis(par, s0, k0, c0, ck, X, kind):
     R, Lf = F.basis_vectors(ck, par, picks, nc=16)
     lam, M, parts, M0 = F.self_consistent(Jt, R, Lf, lam0='bare')
     co = F.coefficients(M, 0, list(range(1, 1 + len(bps))))
+    co.pop("_rl", None)  # 고유벡터 (배열) 는 저장하지 않는다
     w = np.linalg.eigvals(Jt)
     return dict(lam_self=lam / s0, **{k: (v / s0 if k in ("alpha", "beta", "beta_max", "Lam2") else v) for k, v in co.items()}, lam_full_max=float(w.real.max()) / s0)
+
+
+def dump(res, fn):
+    with open(fn + ".tmp", "w") as f:
+        json.dump(res, f, default=lambda o: o.tolist() if hasattr(o, "tolist") else str(o))
+    os.replace(fn + ".tmp", fn)
 
 
 def run(case, target, etas):
@@ -65,8 +72,10 @@ def run(case, target, etas):
         json.dump(dict(gamma=g, design=info), open(gfn, "w"), default=lambda o: o.item() if hasattr(o, "item") else str(o))
     res = dict(case=case, target=target, gamma=g, knob=dict(kn.__dict__), design=info, etas=[])
     if os.path.exists(fn):
-        old = json.load(open(fn))
-        res["etas"] = [e for e in old.get("etas", [])]
+        try:
+            res["etas"] = [e for e in json.load(open(fn)).get("etas", [])]
+        except Exception:  # 쓰다 중단된 파일은 버리고 다시 계산
+            res["etas"] = []
     done = {e["eta"] for e in res["etas"]}
     etas = [e for e in etas if e not in done]
     for eta in etas:
@@ -98,9 +107,9 @@ def run(case, target, etas):
             ent["states"].append(dict(seed=sname, exists=True, type=info8["type"], s=float(info8["Aa"] ** 2), Ac=info8["Ac"], resid=float(r), fillin=fa))
         res["etas"].append(ent)
         print(case, target, eta, [ (s.get("type"), s.get("fillin", {}).get("lam_full_max")) for s in ent["states"]], "stripe alpha0=%.3f" % so["alpha"], flush=True)
-        json.dump(res, open(fn, "w"), default=lambda o: o.item() if hasattr(o, "item") else str(o))
+        dump(res, fn)
     res["time_s"] = time.time() - t0
-    json.dump(res, open(fn, "w"), default=lambda o: o.item() if hasattr(o, "item") else str(o))
+    dump(res, fn)
 
 
 if __name__ == "__main__":
