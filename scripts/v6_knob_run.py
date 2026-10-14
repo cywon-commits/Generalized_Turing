@@ -16,18 +16,25 @@ ETAS = (0.082, 0.09, 0.10, 0.11, 0.13)
 
 
 def calibrate(case, target, eta0=0.10):
+    """γ 를 0 에서 시작해 기하급수로 늘려 α0/σ0 = -target 을 가두고 brentq. (α0 = c′ 계열 고유값 / σ0)"""
     kn, info = design_knob(case)
 
     def f(g):
         kn.gamma = g
         return alpha0_of(case, eta0, kn)[0]["alpha"] + target
-    lo, hi = -0.0015, 0.0
-    flo = f(lo)
-    if flo < 0:  # 아직 도달 못함 -> 더 큰 |γ|
-        lo = -0.004; flo = f(lo)
-    g = brentq(f, lo, hi, xtol=1e-9, rtol=1e-6, maxiter=40)
-    kn.gamma = g
-    return kn, info, g
+    g_prev, f_prev = 0.0, f(0.0)
+    g = -2e-5
+    hist = [(0.0, f_prev - target)]
+    for _ in range(14):
+        fg = f(g); hist.append((g, fg - target))
+        if fg * f_prev < 0:
+            root = brentq(f, g, g_prev, xtol=1e-10, rtol=1e-7, maxiter=40)
+            kn.gamma = root
+            info["calib_history"] = hist
+            return kn, info, root
+        g_prev, f_prev = g, fg
+        g *= 1.6
+    raise RuntimeError(f"no bracket for {case} {target}: {hist}")
 
 
 def fillin_analysis(par, s0, k0, c0, ck, X, kind):
@@ -38,7 +45,7 @@ def fillin_analysis(par, s0, k0, c0, ck, X, kind):
     bps = {"standing": [1, 3], "p1": [1], "stripe": [1, 3]}[kind]
     picks = [(jc, 0)] + [(jb, p) for p in bps]
     R, Lf = F.basis_vectors(ck, par, picks, nc=16)
-    lam, M, parts, M0 = F.self_consistent(Jt, R, Lf)
+    lam, M, parts, M0 = F.self_consistent(Jt, R, Lf, lam0='bare')
     co = F.coefficients(M, 0, list(range(1, 1 + len(bps))))
     w = np.linalg.eigvals(Jt)
     return dict(lam_self=lam / s0, **{k: (v / s0 if k in ("alpha", "beta", "beta_max", "Lam2") else v) for k, v in co.items()}, lam_full_max=float(w.real.max()) / s0)

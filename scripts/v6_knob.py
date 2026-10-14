@@ -15,7 +15,7 @@ from scipy.fft import next_fast_len
 THETA_STAR = {c: np.arccos(r / 2) for c, r in CASES.items()}
 
 
-def design_knob(case, eps=0.3, kk=1.0, base=None):
+def design_knob(case, eps=3.0, kk=1.0, base=None):
     """p=0 의 (w,y) 최대 성장이 K₋ = 4 sin²θ* q0 에서 -eps·σ0 이 되도록 (aw, Dy) 를 푼다. 다른 섹터는 κ_w=κ_y=kk 로 강하게 안정."""
     base = base or Params(Dv=DV)
     s0, q0 = peak(base, 0)
@@ -81,7 +81,7 @@ def alpha0_of(case, eta, kn, verbose=False):
     Jt = F.sector_transform(ck.M, 16) @ J @ F.sector_transform(ck.M, 16).conj().T
     jc = ck.lookup[(1, 0)]
     R, Lf = F.basis_vectors(ck, par, [(jc, 0)], nc=16)
-    lam, M, parts, M0 = F.self_consistent(Jt, R, Lf)
+    lam, M, parts, M0 = F.self_consistent(Jt, R, Lf, lam0='bare')
     A_c = classify_state(c0, X[:8])["Ac"]
     out = dict(alpha=float(M[0, 0].real) / s0, resid=float(r), Ac=float(A_c))
     # 줄무늬 안정성: κ=0 섹터의 최대 고유값 (c0 셀 선형화)

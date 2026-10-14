@@ -77,6 +77,8 @@ def self_consistent(Jt, R, Lf, lam0=None, iters=1000, tol=1e-13):
     def Meff(lam):
         return Jpp + (A / (lam - mu)[None, :]) @ B
     M = Meff(0.0)
+    if isinstance(lam0, str) and lam0 == 'bare':  # c′ 계열 고유값을 따라가는 시작값: P 블록의 기본 대각 고유값
+        lam0 = float(np.max(np.linalg.eigvals(Jpp).real))
     lam = float(np.max(np.linalg.eigvals(M).real)) if lam0 is None else lam0
     for _ in range(iters):
         new = float(np.max(np.linalg.eigvals(Meff(lam)).real))
