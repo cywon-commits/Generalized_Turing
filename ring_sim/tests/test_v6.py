@@ -44,3 +44,28 @@ def test_full_P_gives_J():
     Vi = np.linalg.inv(V)
     M, _ = F.schur(J, V, Vi.conj().T, 0.0)
     assert np.allclose(M, Vi @ J @ V)
+
+
+def test_cell12_jacobian_matches_finite_difference():
+    from ring_sim.bloch12 import Cell12, Knob
+    from ring_sim.model import Params
+    par = Params(Dv=2.50309, eta=0.1, etap=-0.05, ku=0.07, kv=0.17)
+    kn = Knob(Dy=4.0, kw=0.5, ky=0.5, gamma=-0.6, betaw=1.0)
+    c = Cell12(par, kn, (2, 1), (2, -1), 0.12, 0.34)
+    rng = np.random.default_rng(0)
+    # 실공간 실수장이 되도록 X(-k) = conj X(k) 를 만족하는 임의 상태
+    X = np.zeros((16, c.M), complex)
+    for j in range(c.M):
+        jm = c.lookup[(-c.m[j], -c.n[j])]
+        if jm >= j:
+            z = (rng.standard_normal(16) + 1j * rng.standard_normal(16)) * 0.02
+            X[:, j] += z
+            X[:, jm] += np.conj(z) if jm != j else 0
+            if jm == j:
+                X[:, j] = X[:, j].real
+    J = c.jacobian(X, c)
+    dx = rng.standard_normal((16, c.M)) * 1e-6
+    Lb = c.Lblock()
+    fd = (c.residual(X + dx, Lb) - c.residual(X - dx, Lb)) / 2
+    lin = (J @ dx.T.reshape(-1)).reshape(c.M, 16).T
+    assert np.abs(fd - lin).max() < 1e-9 * max(1, np.abs(lin).max()) + 1e-12

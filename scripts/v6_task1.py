@@ -80,7 +80,7 @@ def run(job):
         for kind in kinds:
             for incl in (False, True):
                 o, _ = analyse(c0, ck, par, k0, k1, st["X"], kind, incl)
-                                ent["runs"].append(o)
+                ent["runs"].append(o)
         # 진폭 스캔 (정상파형/나선형만): 줄무늬 상태와의 보간
         if st["type"] != "stripe":
             kind = "standing" if st["type"] == "standing" else "p1"

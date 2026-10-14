@@ -14,11 +14,11 @@ def dft4():
     return np.exp(-1j * np.pi * np.outer(np.arange(NL), n) / 2) / 2.0  # (p, n); 유니터리 (행 정규직교)
 
 
-def sector_transform(M):
+def sector_transform(M, nc=8):
     F = dft4()
-    B = np.zeros((8, 8), complex)
-    B[:4, :4] = F
-    B[4:, 4:] = F
+    B = np.zeros((nc, nc), complex)
+    for k in range(nc // 4):
+        B[4 * k:4 * k + 4, 4 * k:4 * k + 4] = F
     return np.kron(np.eye(M), B)  # (8M, 8M) 유니터리: 층 기저 -> 섹터 기저
 
 
@@ -38,15 +38,15 @@ def top_pair(par, p, q):
     return w[i].real, r, l
 
 
-def basis_vectors(cell, par, picks):
+def basis_vectors(cell, par, picks, nc=8):
     """picks: [(모드 인덱스 j, 섹터 p), ...] -> 우벡터 R (8M, d), 좌벡터 Lf (8M, d) (섹터 기저)"""
     d = len(picks)
-    R = np.zeros((8 * cell.M, d), complex)
+    R = np.zeros((nc * cell.M, d), complex)
     Lf = np.zeros_like(R)
     for k, (j, p) in enumerate(picks):
         _, r, l = top_pair(par, p, cell.q[j])
-        R[8 * j + p, k], R[8 * j + 4 + p, k] = r
-        Lf[8 * j + p, k], Lf[8 * j + 4 + p, k] = l
+        R[nc * j + p, k], R[nc * j + 4 + p, k] = r
+        Lf[nc * j + p, k], Lf[nc * j + 4 + p, k] = l
     return R, Lf
 
 
@@ -123,7 +123,7 @@ def channel_contributions(parts, d_idx, lam, Jt, V, T):
     return out, G, Qcols, Qrows
 
 
-def channel_second_order(Jt, R, Lf, lam, lP, rP):
+def channel_second_order(Jt, R, Lf, lam, lP, rP, nc=8):
     """스칼라 x_l^H (J + J G J) x_r 의 직접항과 Q 채널 (j,p) 별 2차 기여 (채널 = 섹터 기저의 (j,p) 2x2 블록).
     lP, rP: P 공간 좌·우 가중 (길이 d). 반환 direct, {(j,p): 기여}, 합 검증값."""
     n, d = R.shape
@@ -139,11 +139,11 @@ def channel_second_order(Jt, R, Lf, lam, lP, rP):
     B = Jt @ xr
     direct = A @ xr
     out = {}
-    M = n // 8
+    M = n // nc
     tot = 0.0
     for j in range(M):
         for p in range(4):
-            ix = [8 * j + p, 8 * j + 4 + p]
+            ix = [nc * j + p, nc * j + 4 + p]
             c = A[ix] @ G[np.ix_(ix, ix)] @ B[ix]
             out[(j, p)] = c
             tot += c
