@@ -69,3 +69,26 @@ def test_cell12_jacobian_matches_finite_difference():
     fd = (c.residual(X + dx, Lb) - c.residual(X - dx, Lb)) / 2
     lin = (J @ dx.T.reshape(-1)).reshape(c.M, 16).T
     assert np.abs(fd - lin).max() < 1e-9 * max(1, np.abs(lin).max()) + 1e-12
+
+
+def test_stripe_cross_saturation_ratio_is_two():
+    """줄무늬 상태에서 바깥 교차계수 비 g_cc'/g = (σ_lin(c') - α0)/σ_lin(c) ≈ 2 (Q000 = 0 설계)"""
+    import sys, os
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "scripts"))
+    from v3_stageA import setup, A_SAT, CASES
+    from ring_sim.bloch import seed_state, newton
+    from ring_sim import fillin as F
+    par, s0, k0, (c0, ck), lat = setup("oct", 0.10)
+    X = seed_state(c0, A_SAT, ab_frac=0.0, rng=np.random.default_rng(3))
+    X, r, _ = newton(c0, X)
+    assert r < 1e-10
+    J = ck.jacobian(X[:4], c0)
+    U = F.sector_transform(ck.M)
+    Jt = U @ J @ U.conj().T
+    jc = ck.lookup[(1, 0)]
+    R, Lf = F.basis_vectors(ck, par, [(jc, 0)])
+    lam, M, parts, M0 = F.self_consistent(Jt, R, Lf)
+    s_c = F.top_pair(par, 0, c0.q[c0.lookup[(1, 1)]])[0]
+    s_cp = F.top_pair(par, 0, ck.q[jc])[0]
+    ratio = (s_cp - lam) / s_c
+    assert abs(ratio - 2.0) < 0.05

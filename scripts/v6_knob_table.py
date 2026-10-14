@@ -14,7 +14,16 @@ for fn in sorted(glob.glob("results_v6/knob/*_t0.?.json")):
                         w_peak_over_s0=des.get("peak_over_s0"), w_sector_max=json.dumps({k: round(v, 1) for k, v in des.get("sector_max_over_s0", {}).items()}))
             if s.get("exists"):
                 fa = s["fillin"]
-                rows.append(dict(base, state=s["type"], exists=True, s=s["s"], lam_f_max_over_s0=fa["lam_full_max"], alpha=fa["alpha"], beta=fa["beta"], qprod=fa["qprod"], Lam2=fa["Lam2"]))
+                sig2 = 1.0
+                a0 = -e["stripe"]["alpha"]; b0 = -e["stripe"]["beta"]
+                Xs = a0 + fa["alpha"]; Ys = b0 + fa["beta"]   # = α0-α(s*), β0-β(s*) 의 할선 (σ0 단위, 부호: 양수면 감쇠 증가)
+                Xs, Ys = -(fa["alpha"] + a0) * -1 * -1, -(fa["beta"] + b0) * -1 * -1
+                Xs = -(fa["alpha"] - (-a0)); Ys = -(fa["beta"] - (-b0))
+                Qs = fa["qprod"] / (d.get("sigma0", 4.112e-4) ** 2)
+                den = (np.sqrt(max(a0 * Ys, 0)) + np.sqrt(max(b0 * Xs, 0))) ** 2
+                Rsec = Qs / den if (den > 0 and Xs > 0 and Ys > 0) else float("nan")
+                rows.append(dict(base, state=s["type"], exists=True, s=s["s"], lam_f_max_over_s0=fa["lam_full_max"], alpha=fa["alpha"], beta=fa["beta"], qprod=fa["qprod"], Lam2=fa["Lam2"],
+                                 Xs_over_s0=Xs, Ys_over_s0=Ys, Q_over_s0sq=Qs, R_secant=Rsec))
             else:
                 rows.append(dict(base, state=s.get("seed"), exists=False, note=s.get("note", "")))
 keys = sorted({k for r in rows for k in r})
