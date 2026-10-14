@@ -55,8 +55,20 @@ def run(case, target, etas):
     fn = f"results_v6/knob/{case}_t{target}.json"
     os.makedirs("results_v6/knob", exist_ok=True)
     t0 = time.time()
-    kn, info, g = calibrate(case, target)
+    gfn = f"results_v6/knob/{case}_t{target}.gamma.json"
+    if os.path.exists(gfn):  # 재시작 이어받기: 보정된 γ 재사용
+        from v6_knob import design_knob
+        kn, info = design_knob(case); g = json.load(open(gfn))["gamma"]; kn.gamma = g
+        info = json.load(open(gfn)).get("design", info)
+    else:
+        kn, info, g = calibrate(case, target)
+        json.dump(dict(gamma=g, design=info), open(gfn, "w"), default=lambda o: o.item() if hasattr(o, "item") else str(o))
     res = dict(case=case, target=target, gamma=g, knob=dict(kn.__dict__), design=info, etas=[])
+    if os.path.exists(fn):
+        old = json.load(open(fn))
+        res["etas"] = [e for e in old.get("etas", [])]
+    done = {e["eta"] for e in res["etas"]}
+    etas = [e for e in etas if e not in done]
     for eta in etas:
         par, s0, k0, (c0, ck) = build(case, eta, kn)
         ck_ = ck
