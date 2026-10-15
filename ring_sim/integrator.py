@@ -67,8 +67,9 @@ def etdrk4_coeffs(Lmat, h, M=64, R=1.0):
 
 
 class Solver:
-    def __init__(self, par: Params, N=512, L=None, dt=0.25, workers=1, dealias=2 / 3):
+    def __init__(self, par: Params, N=512, L=None, dt=0.25, workers=1, dealias=2 / 3, nl=NLAYER):
         self.par, self.N, self.L, self.dt = par, N, L, dt
+        self.nl = nl
         self.workers = workers
         dk = 2 * np.pi / L
         self.dk = dk
@@ -77,7 +78,7 @@ class Solver:
         self.k2 = kx[:, None] ** 2 + ky[None, :] ** 2
         kmax = dealias * np.pi * N / L
         self.mask = (self.k2 <= kmax ** 2)
-        self.shape_hat = (NLAYER, N, N // 2 + 1)
+        self.shape_hat = (self.nl, N, N // 2 + 1)
         # 섹터 p 의 층 FFT 인덱스: rfftn 축0 은 전체 fft 이므로 p = 0..3
         # 고유한 (p, q) 쌍만 계수 계산
         q_all = self.k2[self.mask]
@@ -87,16 +88,16 @@ class Solver:
     def _build(self, uq, inv, h):
         par = self.par
         shp = self.k2.shape
-        Eg = np.empty((NLAYER, 2, 2) + shp)
+        Eg = np.empty((self.nl, 2, 2) + shp)
         E2g = np.empty_like(Eg)
-        Qg = np.zeros((NLAYER, 2) + shp)
+        Qg = np.zeros((self.nl, 2) + shp)
         F1, F2, F3 = np.zeros_like(Qg), np.zeros_like(Qg), np.zeros_like(Qg)
         full_q = self.k2.ravel()
-        for p in range(NLAYER):
-            A = h * lin_matrix(par, p, full_q)
+        for p in range(self.nl):
+            A = h * lin_matrix(par, p, full_q, self.nl)
             Eg[p] = np.moveaxis(_expm2(A), 0, -1).reshape((2, 2) + shp)
             E2g[p] = np.moveaxis(_expm2(A / 2), 0, -1).reshape((2, 2) + shp)
-            _, _, Q, f1, f2, f3 = etdrk4_coeffs(lin_matrix(par, p, uq), h)
+            _, _, Q, f1, f2, f3 = etdrk4_coeffs(lin_matrix(par, p, uq, self.nl), h)
             for tgt, src in ((Qg, Q), (F1, f1), (F2, f2), (F3, f3)):
                 for i in range(2):  # 비선형항은 u 성분(첫 열)에만 작용
                     t = np.zeros(shp)
@@ -109,7 +110,7 @@ class Solver:
                                              for x in (Qg, F1, F2, F3)]
         self.idx = np.flatnonzero(m.ravel())
         self.K = self.idx.size
-        self._buf = np.zeros((NLAYER, self.N * (self.N // 2 + 1)), complex)
+        self._buf = np.zeros((self.nl, self.N * (self.N // 2 + 1)), complex)
         # ky=0 열의 에르미트 대칭 F[p,kx] = conj(F[-p,-kx]) 투영용 인덱스.
         # c2r 변환이 반-에르미트 성분을 버리므로 반올림 오차에서 성장해도 실공간에 안 보이나,
         # 진단(스펙트럼)을 오염시키므로 매 스텝 투영한다.
@@ -120,12 +121,12 @@ class Solver:
         tab.ravel()[self.idx] = np.arange(self.K)
         self._h_pos = pos
         self._h_partner = tab[(-ii) % N, 0]
-        self._h_pp = (-np.arange(NLAYER)) % NLAYER
+        self._h_pp = (-np.arange(self.nl)) % self.nl
 
     # --- 변환 (상태는 dealias 마스크 안의 파수만 압축 저장: (2,4,K)) ---
     def pack(self, fh):
         """전체 rfftn 배열 (4,N,M) -> (4,K)"""
-        return fh.reshape(NLAYER, -1)[:, self.idx]
+        return fh.reshape(self.nl, -1)[:, self.idx]
 
     def to_hat(self, f):
         """실공간 (4,N,N) -> 압축 Fourier (4,K)"""
@@ -134,7 +135,7 @@ class Solver:
     def to_real(self, fc):
         """압축 Fourier (4,K) -> 실공간 (4,N,N)"""
         self._buf[:, self.idx] = fc
-        return sfft.irfftn(self._buf.reshape(self.shape_hat), s=(NLAYER, self.N, self.N),
+        return sfft.irfftn(self._buf.reshape(self.shape_hat), s=(self.nl, self.N, self.N),
                            workers=self.workers)
 
     def state_from_real(self, u, v):

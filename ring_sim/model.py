@@ -28,13 +28,13 @@ def nonlinear_u(u, par, axis=0):
     return out
 
 
-def s_p(p):
-    return 4.0 * np.sin(np.pi * np.asarray(p) / NLAYER) ** 2
+def s_p(p, nl=NLAYER):
+    return 4.0 * np.sin(np.pi * np.asarray(p) / nl) ** 2
 
 
-def lin_matrix(par, p, q):
-    """섹터 p, q=k^2 에서의 2x2 선형 연산자 (…,2,2) 실수."""
-    s = s_p(p)
+def lin_matrix(par, p, q, nl=NLAYER):
+    """섹터 p, q=k^2 에서의 2x2 선형 연산자 (…,2,2) 실수. nl: 층 수 (v7 이중층 nl=2)."""
+    s = s_p(p, nl)
     q = np.asarray(q, dtype=float)
     L = np.zeros(np.broadcast(s, q).shape + (2, 2))
     L[..., 0, 0] = par.a - s * par.ku - par.Du * q
@@ -44,9 +44,9 @@ def lin_matrix(par, p, q):
     return L
 
 
-def growth_rate(par, p, q):
+def growth_rate(par, p, q, nl=NLAYER):
     """최대 고유값 실수부 σ_p(q)."""
-    L = lin_matrix(par, p, q)
+    L = lin_matrix(par, p, q, nl)
     return np.linalg.eigvals(L).real.max(axis=-1)
 
 
