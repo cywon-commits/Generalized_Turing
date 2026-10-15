@@ -19,17 +19,22 @@ def orient(u, k0, L, w=0.3):
     return out
 
 
-rows = []
-files = sorted(glob.glob("results_v7/D/D1_*_s*.json"))
-fig, ax = plt.subplots(2, 6, figsize=(20, 6.8))
-for j, fn in enumerate(files):
-    d = json.load(open(fn)); u = np.load(fn.replace(".json", "_u.npy")).astype(float)
-    o = orient(u, d["k0"], d["L"])
-    rows.append((d["case"], d["seed"], o))
-    print(d["case"], d["seed"], "in: P=%.2e psi2=%.2f psi4=%.2f psi6=%.2f | anti: P=%.2e psi2=%.2f psi4=%.2f psi6=%.2f" % tuple([o["in"]["P"], o["in"]["psi2"], o["in"]["psi4"], o["in"]["psi6"], o["anti"]["P"], o["anti"]["psi2"], o["anti"]["psi4"], o["anti"]["psi6"]]))
-    for r_, lay in enumerate((0, 1)):
-        ax[r_, j].imshow(u[lay].T, origin="lower", cmap="RdBu_r"); ax[r_, j].axis("off")
-    ax[0, j].set_title(f"{d['case'][:9]} s{d['seed']}", fontsize=8)
-os.makedirs("results_v7/figures", exist_ok=True)
-fig.tight_layout(); fig.savefig("results_v7/figures/D1_final_states.png", dpi=80)
-json.dump([dict(case=c, seed=s, **o) for c, s, o in rows], open("results_v7/D/D1_orientation.json", "w"), indent=1)
+def main():
+    rows = []
+    files = sorted(glob.glob("results_v7/D/D1_*_s*.json"))
+    fig, ax = plt.subplots(2, max(len(files), 2), figsize=(3.3 * max(len(files), 2), 6.8))
+    for j, fn in enumerate(files):
+        d = json.load(open(fn)); u = np.load(fn.replace(".json", "_u.npy")).astype(float)
+        o = orient(u, d["k0"], d["L"])
+        rows.append((d["case"], d["seed"], o))
+        print(d["case"], d["seed"], "in: P=%.2e psi2=%.2f psi4=%.2f psi6=%.2f | anti: P=%.2e psi2=%.2f psi4=%.2f psi6=%.2f" % tuple([o["in"]["P"], o["in"]["psi2"], o["in"]["psi4"], o["in"]["psi6"], o["anti"]["P"], o["anti"]["psi2"], o["anti"]["psi4"], o["anti"]["psi6"]]))
+        for r_, lay in enumerate((0, 1)):
+            ax[r_, j].imshow(u[lay].T, origin="lower", cmap="RdBu_r"); ax[r_, j].axis("off")
+        ax[0, j].set_title(f"{d['case'][:9]} s{d['seed']}", fontsize=8)
+    os.makedirs("results_v7/figures", exist_ok=True)
+    fig.tight_layout(); fig.savefig("results_v7/figures/D1_final_states.png", dpi=80)
+    json.dump([dict(case=c, seed=s, **o) for c, s, o in rows], open("results_v7/D/D1_orientation.json", "w"), indent=1)
+
+
+if __name__ == "__main__":
+    main()

@@ -28,6 +28,7 @@ for d in load("exp1*"):
     for s in d["states"]: print("   ", s["type"], "Ac=%.4f Aa=%.4f maxeig=%.4f" % (s["Ac"], s["Aa"], s["maxeig_over_s0"]))
 print("\n== exp2 (σ1/σ0 × η') ==  sig1/s0 etap kf eta_r | standing(maxeig) spiral(maxeig)")
 E2 = [r for r in rows if r["exp"] == "exp2"]
+E4 = [r for r in rows if r["exp"] == "exp4"]
 for key in sorted({(r["sigma1_over_sigma0"], r["etap_ratio"], r["kf"]) for r in E2}):
     sub = {r["stacking"]: r for r in E2 if (r["sigma1_over_sigma0"], r["etap_ratio"], r["kf"]) == key}
     fm = lambda r: ("%.3f%s" % (r["maxeig_over_s0"], "*" if r["stable"] else "")) if r["exists"] else "none"
@@ -51,10 +52,8 @@ for rho in ("sqrt3", "L1.82", "oct", "H1.87", "dodec"):
 os.makedirs("results_v7/figures", exist_ok=True)
 col = lambda sS, sP: "#2ca02c" if (sS and sP) else "#1f77b4" if sS else "#d62728" if sP else "#aaaaaa"
 fig, ax = plt.subplots(1, 2, figsize=(11, 4))
-for r in [x for x in E2]:
-    pass
 pts = {}
-for r in E2:
+for r in E2 + E4:
     k = (r["sigma1_over_sigma0"], r["etap_ratio"], r["kf"], r["eta"])
     pts.setdefault(k, {})[r["stacking"]] = r["stable"]
 for (s1, er, kf, eta), v in pts.items():
