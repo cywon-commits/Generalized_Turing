@@ -17,9 +17,15 @@ DV_REF = 2.50309
 S0_REF = peak(Params(Dv=DV_REF), 0)[0]
 A_REF = A_SAT  # 줄무늬 진폭 (Dv=DV_REF)
 CASES = {"oct": 2 * np.cos(np.pi / 8), "ctrlL": 1.82}
-FSET = (0.25, 1.0, 4.0)
+FSET = (1 / 64, 1 / 16, 0.25, 1.0, 4.0)
 KFS = (1.05, 1.15, 1.3, 1.5)
 OUT = "results_v7/A"
+
+
+def dump(res, fn):
+    with open(fn + ".tmp", "w") as fh:
+        json.dump(res, fh, default=lambda o: o.tolist() if hasattr(o, "tolist") else str(o))
+    os.replace(fn + ".tmp", fn)
 
 
 def Dv_of(f):
@@ -79,7 +85,7 @@ def run(job):
     found = [x for x in find_states(c0, A_REF * np.sqrt(s0 / S0_REF), T=T, h=h) if x["info"]["type"] == "standing"]
     if not found:
         res["state"] = None
-        json.dump(res, open(fn, "w"), default=lambda o: o.item() if hasattr(o, "item") else str(o)); return job, "no standing state"
+        dump(res, fn); return job, "no standing state"
     X = found[0]["X"]; info = found[0]["info"]
     res["info"] = info; res["s"] = float(info["Aa"] ** 2)
     o, _ = analyse(c0, ck, par, k0, k1, X, "standing", False)
@@ -98,7 +104,7 @@ def run(job):
     res["scan"] = scan
     res["time_s"] = time.time() - t0
     os.makedirs(OUT, exist_ok=True)
-    json.dump(res, open(fn, "w"), default=lambda o: o.item() if hasattr(o, "item") else str(o))
+    dump(res, fn)
     return job, round(res["time_s"])
 
 
