@@ -68,6 +68,8 @@ def job(spec):
         res = dict(spec, eta_r=etr, thr_scan=vals)
         if np.isfinite(etr):
             res.update(states_at(RHO["sqrt3"], DV_REF, kf * etr, r, er, 3)); res["eta"] = kf * etr
+    elif kind == "exp4":  # η'=0: 줄무늬 문턱이 정의되지 않아 절대 η 격자
+        res = states_at(RHO["sqrt3"], DV_REF, spec["eta"], spec["r"], 0.0, 3); res.update(spec)
     else:
         res = states_at(RHO[spec["rho"]], DV_REF, spec["eta"], 1.0, -0.5, 3); res.update(spec)
     res["time_s"] = time.time() - t0
@@ -81,6 +83,9 @@ def specs():
         for er in (0.0, -0.5):
             for kf in (1.3, 2.0):
                 S.append(dict(kind="exp2", name=f"exp2_r{r}_e{er}_k{kf}", r=r, etap_ratio=er, kf=kf, sigma1_over_sigma0=-r))
+    for r in (-1.0, -0.5, 0.0, 0.5, 1.0):
+        for eta in (0.10, 0.20, 0.30, 0.40):
+            S.append(dict(kind="exp4", name=f"exp4_r{r}_eta{eta}", r=r, etap_ratio=0.0, sigma1_over_sigma0=-r, eta=eta))
     for rho in RHO:
         for eta in (0.082, 0.085, 0.09, 0.10, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16):
             S.append(dict(kind="exp3", name=f"exp3_{rho}_eta{eta}", rho=rho, eta=eta))
