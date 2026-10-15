@@ -24,7 +24,8 @@ class Cell:
         self.par, self.dk, self.kcut = par, dk, kcut
         self.a, self.b = np.array(a, float), np.array(b, float)
         self.kappa = np.array(kappa, float)
-        Mr = int(np.ceil(kcut / dk / min(abs(self.a[0]), abs(self.b[0]), 1.0))) + 2
+        nz = [abs(x) for x in (*self.a, *self.b) if abs(x) > 1e-12]
+        Mr = int(np.ceil(kcut / dk / min(nz + [1.0]))) + 2  # v7: 비정수 (연속체) 벡터에서도 모든 모드를 포함
         mm, nn = np.meshgrid(np.arange(-Mr, Mr + 1), np.arange(-Mr, Mr + 1), indexing="ij")
         gx = mm * self.a[0] + nn * self.b[0] + self.kappa[0]
         gy = mm * self.a[1] + nn * self.b[1] + self.kappa[1]
