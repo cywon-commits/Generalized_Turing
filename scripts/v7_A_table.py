@@ -51,3 +51,19 @@ for case, c in (("oct", "#1f77b4"), ("ctrlL", "#d62728")):
 ax[0].set_ylabel("R"); ax[1].set_ylabel("λ_f / σ0"); ax[2].set_ylabel("|α0| / σ0")
 for a in ax: a.set_xscale("log"); a.set_xlabel("σ0")
 ax[0].legend(fontsize=5, ncol=2); fig.tight_layout(); fig.savefig("results_v7/figures/A_R_vs_sigma0.png", dpi=110)
+
+# 16 배 창 (연속 3 개 σ0) 별 R 의 상대 변화 (max-min)/mean
+FL = sorted({r["f"] for r in rows})
+print("\n16배 창별 R 상대 변화 (max-min)/mean [%]  (창 = 연속한 σ0 세 개: f 가 4배씩)")
+win = {}
+for case in ("oct", "ctrlL"):
+    for kf in sorted({r["kf"] for r in rows}):
+        for i in range(len(FL) - 2):
+            fs = FL[i:i + 3]
+            Rv = [next((r["R"] for r in rows if r["case"] == case and r["kf"] == kf and r["f"] == f_), np.nan) for f_ in fs]
+            if np.all(np.isfinite(Rv)) and np.mean(Rv) > 0:
+                win[(case, kf, fs[0])] = 100 * (max(Rv) - min(Rv)) / np.mean(Rv)
+for case in ("oct", "ctrlL"):
+    print(case, "창 시작 f:", [f for f in FL[:3]])
+    for kf in sorted({r["kf"] for r in rows}):
+        print("  κ_f=%.2f" % kf, ["%.1f%%" % win.get((case, kf, f), float("nan")) for f in FL[:3]])
