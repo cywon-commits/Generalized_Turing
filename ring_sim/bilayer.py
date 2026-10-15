@@ -71,3 +71,93 @@ def peak_directions(P, N, L, k0, w=0.25, frac=0.15):
     ok = loc & (Pm >= frac * m)
     ang = np.degrees(np.arctan2(KY[ok], KX[ok])) % 180.0
     return sorted(set(np.round(ang, 0))), float(Pm.sum())
+
+
+# ---------------- 이중층 Bloch 셀 (Galerkin) ----------------
+from scipy.fft import fft2, ifft2, next_fast_len
+from .bloch import Cell
+from .continuum import cont_vectors
+
+
+class Cell2(Cell):
+    """상태 X: (4, M) = [u0,u1,v0,v1]. 층간 결합 κ (n±1 이 같은 층): κ(2 u_other - 2 u_n). 2차항 η u², 3차항 -c u³ (η'=0)."""
+    nc = 4
+
+    def Lblock(self):
+        p = self.par
+        S2 = np.array([[0.0, 2.0], [2.0, 0.0]]); I = np.eye(2)
+        L = np.zeros((self.M, 4, 4))
+        for j in range(self.M):
+            q = self.q[j]
+            L[j, :2, :2] = (p.a - p.Du * q - 2 * p.ku) * I + p.ku * S2
+            L[j, :2, 2:] = -p.b * I
+            L[j, 2:, :2] = I
+            L[j, 2:, 2:] = (-p.d - p.Dv * q - 2 * p.kv) * I + p.kv * S2
+        return L
+
+    def nonlinear(self, X):
+        p = self.par
+        u = self.to_real(X[:2])
+        out = np.zeros_like(X)
+        out[:2] = self.to_hat(p.eta * u * u - p.c * u ** 3)
+        return out
+
+    def jacobian(self, ustar, star_cell):
+        p = self.par
+        us = star_cell.to_real(ustar)
+        fh = fft2(2 * p.eta * us - 3 * p.c * us ** 2) / (self.P ** 2)
+        M = self.M
+        J = np.zeros((M, 4, M, 4), complex)
+        Lb = self.Lblock()
+        for j in range(M):
+            J[j, :, j, :] += Lb[j]
+        for n in range(2):
+            J[:, n, :, n] += self._conv(fh[n], self)
+        return J.reshape(4 * M, 4 * M)
+
+
+def relax2(cell, X, T, h):
+    import scipy.linalg as sla
+    Lb = cell.Lblock(); n = 4
+    E = np.zeros_like(Lb); Ph = np.zeros_like(Lb)
+    for j in range(cell.M):
+        Z = np.zeros((2 * n, 2 * n)); Z[:n, :n] = Lb[j] * h; Z[:n, n:] = np.eye(n) * h
+        EZ = sla.expm(Z); E[j] = EZ[:n, :n]; Ph[j] = EZ[:n, n:]
+    for it in range(int(T / h)):
+        X = np.einsum("jab,bj->aj", E, X) + np.einsum("jab,bj->aj", Ph, cell.nonlinear(X))
+        if not np.all(np.isfinite(X)): return X
+        if it % 200 == 0 and np.abs(cell.residual(X, Lb)).max() < 1e-13: break
+    return X
+
+
+def newton2(cell, X, iters=40, tol=1e-12):
+    import scipy.linalg as sla
+    Lb = cell.Lblock()
+    for it in range(iters):
+        F = cell.residual(X, Lb); r = np.abs(F).max()
+        if r < tol: return X, r
+        dx = sla.lstsq(cell.jacobian(X[:2], cell), -F.T.reshape(-1), cond=1e-9)[0]
+        X = X + dx.reshape(cell.M, 4).T
+    return X, np.abs(cell.residual(X, Lb)).max()
+
+
+def cell2_setup(par, rho, nb=3, kcut_factor=3.0):
+    """par: Params (ku,kv 포함). Λ = span{a,b} (연속체 정확 벡터, 길이는 k0 단위), nb x nb Bloch 오프셋."""
+    s0, q0 = peak_nl(par, 0)
+    k0 = np.sqrt(q0)
+    a, b, bp = cont_vectors(rho)
+    a_, b_ = np.array(a), np.array(b)
+    kaps = [(0.0, 0.0)] + [tuple(i / nb * a_ + j / nb * b_) for i in range(nb) for j in range(nb) if (i, j) != (0, 0)]
+    cells = [Cell2(par, a, b, k0, kcut_factor * k0, kappa=k) for k in kaps]
+    P = next_fast_len(4 * max(c.Mx for c in cells) + 2)
+    return [Cell2(par, a, b, k0, kcut_factor * k0, kappa=c.kappa, P=P) for c in cells], s0, k0
+
+
+def layer_shift(cell, X):
+    """층 0 과 층 1 의 실공간 장 (셀 좌표 = Λ 기본 셀의 분수 좌표) 의 교차상관 최대 위치 -> 분수 이동 (s,t), 상관값"""
+    u = cell.to_real(X[:2]).real
+    C = np.fft.ifft2(np.fft.fft2(u[0] - u[0].mean()) * np.conj(np.fft.fft2(u[1] - u[1].mean()))).real
+    i, j = np.unravel_index(np.argmax(C), C.shape)
+    P = cell.P
+    norm = np.sqrt((u[0] - u[0].mean()) @ (u[0] - u[0].mean()) if False else (np.sum((u[0] - u[0].mean()) ** 2) * np.sum((u[1] - u[1].mean()) ** 2)))
+    return (i / P % 1.0, j / P % 1.0), float(C[i, j] / norm)

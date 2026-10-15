@@ -12,7 +12,11 @@ ETA = 0.4
 
 
 def case_params(case):
-    if case == "antiphase_only":   # 동위상 봉우리 -σ, 역위상 +σ (같은 k0)
+    if case.startswith("antiphase_m"):   # 동위상 봉우리 -m σ, 역위상 +σ
+        m = float(case[len("antiphase_m"):])
+        base = Params(Dv=Dv_for_peak(-m * SIG, lo=1.5, hi=2.9), eta=ETA, etap=0.0)
+        ku, kv = solve_kappa_nl(1.0, 1.0 / m, base)
+    elif case == "antiphase_only":   # 동위상 봉우리 -σ, 역위상 +σ (같은 k0)
         base = Params(Dv=Dv_for_peak(-SIG), eta=ETA, etap=0.0)
         ku, kv = solve_kappa_nl(1.0, 1.0, base)   # σ1 = -r σ0(base) = +SIG
     else:                          # 동위상 +σ, 역위상 -σ
@@ -47,6 +51,7 @@ def run(job):
 
 
 if __name__ == "__main__":
-    jobs = [(c, s) for c in ("antiphase_only", "inphase_only") for s in (0, 1, 2)]
+    cases = sys.argv[1].split(",") if len(sys.argv) > 1 else ["antiphase_only", "inphase_only"]
+    jobs = [(c, s) for c in cases for s in (0, 1, 2)]
     with Pool(3, maxtasksperchild=1) as p:
         for r in p.imap_unordered(run, jobs): print(r, flush=True)
